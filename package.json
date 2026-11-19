@@ -1,0 +1,13 @@
+{
+  "name": "tint-impactmonitor",
+  "version": "1.0.0",
+  "description": "Webapp voor TINT Achterhoek om de impact van inclusieve technologie bij werkgevers te meten.",
+  "private": true,
+  "main": "server.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "backup": "node scripts/backup.js"
+  }
+}

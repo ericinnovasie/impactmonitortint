@@ -1,0 +1,13 @@
+services:
+  impactmonitor:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      APP_PASSWORD: ${APP_PASSWORD:?Stel APP_PASSWORD in (bijv. in een .env-bestand)}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+    volumes:
+      - impactdata:/data
+volumes:
+  impactdata:

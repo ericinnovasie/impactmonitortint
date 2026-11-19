@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TINT Impactmonitor</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Huisstijl TINT Achterhoek (tint-achterhoek.nl/huisstijl): paars hoofdkleur, groen accent, lavendel vlakken, amber spaarzaam voor meldingen, Manrope */
+:root{
+  /* layout: vaste werkbalk met tabs, één werkkolom (max 1120px), elke fase een eigen kaart */
+  --bg:#f3f0ff; --surface:#ffffff; --ink:#1f1d2b; --muted:#5e5a73; --line:#dcd6f5;
+  --accent:#604ce2; --accent-text:#4f3bc7; --accent-ink:#ffffff; --accent-soft:#e6e0ff;
+  --green:#25e579; --green-soft:#d3f9e4; --green-text:#0d7a3d;
+  --ochre:#8a5a00; --ochre-soft:#fff1d4; --amber:#fdb93b;
+  --good:#0d7a3d; --good-soft:#d3f9e4; --bad:#b3372a; --bad-soft:#fbe3df;
+  --display:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --body:"Manrope","Segoe UI",Arial,sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1f1d2b; --surface:#2a2739; --ink:#f3f0ff; --muted:#b4aecb; --line:#3d3952;
+    --accent:#8c7cf0; --accent-text:#b3a8ff; --accent-ink:#1f1d2b; --accent-soft:#3a3460;
+    --green:#25e579; --green-soft:#183d2c; --green-text:#5ff0a0;
+    --ochre:#fdb93b; --ochre-soft:#3d3220; --amber:#fdb93b;
+    --good:#5ff0a0; --good-soft:#183d2c; --bad:#f19a8c; --bad-soft:#47262a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1f1d2b; --surface:#2a2739; --ink:#f3f0ff; --muted:#b4aecb; --line:#3d3952;
+  --accent:#8c7cf0; --accent-text:#b3a8ff; --accent-ink:#1f1d2b; --accent-soft:#3a3460;
+  --green:#25e579; --green-soft:#183d2c; --green-text:#5ff0a0;
+  --ochre:#fdb93b; --ochre-soft:#3d3220; --amber:#fdb93b;
+  --good:#5ff0a0; --good-soft:#183d2c; --bad:#f19a8c; --bad-soft:#47262a;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:1.2rem;font-weight:800}
+h2{font-size:1.45rem;font-weight:800}
+h3{font-size:1.08rem;font-weight:800}
+h4{font-size:.95rem;font-weight:700}
+p{margin:0}
+a{color:var(--accent-text)}
+.top{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:inset 0 4px 0 var(--accent)}
+.top-in{max-width:1120px;margin:0 auto;padding:12px 16px 0;display:flex;flex-direction:column;gap:10px}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.brand small{color:var(--muted);font-size:.85rem}
+.wordmark{color:var(--accent-text)}
+.wordmark b{font-weight:800}
+.wordmark span{color:var(--ink);font-weight:600}
+.tabs{display:flex;gap:4px;overflow-x:auto}
+.tabs button{border:0;background:none;font:inherit;font-weight:600;color:var(--muted);padding:8px 12px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tabs button[aria-current="page"]{color:var(--accent-text);border-bottom-color:var(--green)}
+.tabs button:hover{color:var(--ink)}
+main{max-width:1120px;margin:0 auto;padding:20px 16px 64px;display:flex;flex-direction:column;gap:18px}
+.banner{padding:10px 14px;border-radius:8px;background:var(--ochre-soft);color:var(--ink);border:1px solid var(--line);border-left:4px solid var(--amber);font-size:.92rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.between{justify-content:space-between}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.muted{color:var(--muted)}
+.small{font-size:.87rem}
+a.btn{text-decoration:none;display:inline-block}
+.btn{font:inherit;font-weight:700;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-text);border-color:var(--accent-text)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.danger{color:var(--bad)}
+.btn.ghost{border-color:transparent;background:none;padding:6px 8px}
+.btn:focus-visible,.tabs button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.scale button:focus-visible,.chip:focus-within{outline:3px solid var(--green);outline-offset:2px}
+label.f{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.92rem}
+label.f span.h{font-weight:400;color:var(--muted);font-size:.85rem}
+input[type=text],input[type=number],input[type=date],select,textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 10px;width:100%}
+textarea{min-height:76px;resize:vertical}
+input[type=number]{font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:.9rem;cursor:pointer;background:var(--bg);font-weight:500}
+.chip input{margin:0;accent-color:var(--accent)}
+.chip:has(input:checked){background:var(--accent-soft);border-color:var(--accent)}
+.pill{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);white-space:nowrap}
+.pill.ochre{background:var(--ochre-soft);color:var(--ochre)}
+.pill.grey{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.82rem;color:var(--muted);font-weight:600}
+tr.click{cursor:pointer}
+tr.click:hover td{background:var(--bg)}
+.tw{overflow-x:auto}
+.num{text-align:right}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.tile b{display:block;font-family:var(--display);font-weight:800;color:var(--accent-text);font-size:1.8rem;font-variant-numeric:tabular-nums}
+.tile span{color:var(--muted);font-size:.88rem}
+.steps{display:flex;gap:6px;flex-wrap:wrap}
+.steps button{font:inherit;font-weight:600;font-size:.9rem;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:7px;padding:7px 12px;cursor:pointer;display:flex;gap:7px;align-items:center}
+.steps button i{font-style:normal;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--bg);border:1px solid var(--line);font-size:.8rem}
+.steps button.done i{background:var(--green);border-color:var(--green);color:#1f1d2b}
+.steps button[aria-current="step"]{color:var(--ink);border-color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
+.q{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:0}
+.scale{display:flex;gap:4px}
+.scale button{font:inherit;font-weight:700;width:36px;height:34px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.scale button.na{width:auto;padding:0 8px;font-weight:500;font-size:.82rem;color:var(--muted)}
+.scale button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.dimhead{display:flex;gap:10px;align-items:center;justify-content:space-between;border-left:4px solid var(--accent);padding-left:10px}
+.kw{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:6px}
+.save{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.save::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.save.dirty::before,.save.saving::before{background:var(--amber)}
+.save.error::before{background:var(--bad)}
+.save.error{color:var(--bad)}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:170px minmax(0,1fr) 56px;gap:10px;align-items:center;font-size:.92rem}
+.bar .track{position:relative;height:16px;background:var(--bg);border-radius:4px;border:1px solid var(--line)}
+.bar .track .fill{position:absolute;top:0;bottom:0;background:var(--accent);border-radius:3px}
+.bar .track .fill.neg{background:var(--bad)}
+.bar .track .zero{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--muted)}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.hint{background:var(--accent-soft);border-radius:8px;padding:10px 12px;font-size:.9rem}
+.hint.ochre{background:var(--ochre-soft);border-left:4px solid var(--amber)}
+.techcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.tech{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.tech .users{border-top:1px solid var(--line);padding-top:8px;font-size:.9rem}
+.report{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px;max-width:860px}
+.report h2{font-size:1.5rem}
+.report section{display:flex;flex-direction:column;gap:8px}
+.report .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 16px;font-size:.92rem}
+.modalbg{position:fixed;inset:0;background:rgba(10,20,15,.45);display:grid;place-items:center;padding:16px;z-index:20}
+.modal{background:var(--surface);border-radius:12px;border:1px solid var(--line);padding:20px;max-width:480px;width:100%;display:flex;flex-direction:column;gap:12px}
+.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:10px}
+@media (max-width:560px){
+  .q{grid-template-columns:1fr}
+  .bar{grid-template-columns:110px minmax(0,1fr) 48px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <h1 class="wordmark"><b>TINT</b> Achterhoek <span>· Impactmonitor</span></h1>
+      <span class="row" style="gap:8px;align-items:baseline"><small id="conn">Verbinden met gedeelde opslag…</small><button class="btn ghost" id="logout" hidden style="font-size:.85rem">Uitloggen</button></span>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Onderdelen">
+      <button data-view="overzicht">Overzicht</button>
+      <button data-view="impact">Impactmeting</button>
+      <button data-view="inventarisatie">Inventarisatie</button>
+      <button data-view="menukaart">Menukaart</button>
+      <button data-view="bedrijven">Bedrijven</button>
+    </nav>
+  </div>
+</header>
+<main id="main"></main>
+<div id="modalroot"></div>
+
+<script src="/store.js"></script>
+<script>
+/* ---------- Instrument ---------- */
+const DIMS=[
+ {k:'inzet',n:'Inzetbaarheid',items:[
+   ['i1','Medewerkers kunnen deze taak volledig uitvoeren, zonder uitval of aanpassing'],
+   ['i2','Ook mensen met een afstand tot de arbeidsmarkt kunnen deze taak doen']],
+  kw:[['q_kunnen','Medewerkers die deze taak kunnen uitvoeren','personen',false],
+      ['q_doelgroep','Inwoners uit een doelgroep (bijv. Participatiewet) op deze taak','personen',false],
+      ['q_verzuim','Verzuim bij deze taak of afdeling','%',true]]},
+ {k:'zelf',n:'Zelfstandigheid',items:[
+   ['z1','Medewerkers voeren de taak uit zonder hulp of toezicht'],
+   ['z2','Nieuwe medewerkers zijn snel ingewerkt op deze taak']],
+  kw:[['q_begeleiding','Begeleidingstijd door collega of leidinggevende','uur/week',true],
+      ['q_inwerk','Inwerktijd voor deze taak','dagen',true]]},
+ {k:'prod',n:'Productiviteit',items:[
+   ['p1','Het tempo van deze taak is goed'],
+   ['p2','Er is weinig wachttijd, zoekwerk of dubbel werk']],
+  kw:[['q_output','Output (eenheid noteren bij toelichting)','per uur',false],
+      ['q_doorloop','Doorlooptijd per handeling of order','minuten',true]]},
+ {k:'kval',n:'Kwaliteit & veiligheid',items:[
+   ['k1','Het werk gaat zonder fouten of afkeur'],
+   ['k2','Het werk is fysiek veilig']],
+  kw:[['q_fouten','Fouten of afkeur','per week',true],
+      ['q_incident','(Bijna-)ongevallen','per jaar',true]]},
+ {k:'welz',n:'Welzijn',items:[
+   ['w1','De fysieke belasting is goed vol te houden'],
+   ['w2','De mentale belasting is goed vol te houden'],
+   ['w3','Medewerkers hebben plezier in dit werk']],kw:[]}
+];
+const KNELPUNT=[['fysiek','Fysiek'],['cognitief','Cognitief'],['organisatorisch','Organisatorisch']];
+const VERW=[['','Nog niet bepaald'],['++','Sterk positief'],['+','Positief'],['0','Geen effect verwacht'],['-','Risico op negatief effect']];
+const FASEN=['Gestart','Nulmeting','Hypothese','Implementatie','Gemeten'];
+const TECHCAT=['Fysieke ondersteuning','Robotica en automatisering','Digitale werkinstructies','Cognitieve ondersteuning','Werkplek en ergonomie','Communicatie en taal','Overig'];
+const SECTOR=['Maakindustrie / metaal','Voeding','Logistiek','Bouw en installatie','Zorg en welzijn','Groen / agrarisch','Sociaal ontwikkelbedrijf','Detailhandel','Overig'];
+const OMVANG=['1-9','10-49','50-249','250+'];
+const INV_KNEL=['Fysiek zwaar werk','Complexe of wisselende taken','Moeite met vinden van personeel','Uitval of verzuim','Lang inwerken','Taal- of leesvaardigheid','Repeterend werk','Veiligheid'];
+const INV_BELEM=['Kosten','Onbekend wat er is','Geen tijd','Twijfel of het werkt','Draagvlak bij medewerkers','Geen leverancier bekend','Past niet in het proces'];
+const KENNIS=['TINT-adviseur','HAN','Saxion','Graafschap College','Anders'];
+
+/* ---------- Status ---------- */
+const COLLS=['bedrijven','trajecten','inventarisaties','technologieen'];
+const state={bedrijven:{},trajecten:{},inventarisaties:{},technologieen:{}};
+let db=null, downloads=null, loaded=false, readOnly=false;
+let view=(location.hash||'#overzicht').slice(1);
+if(!['overzicht','impact','inventarisatie','menukaart','bedrijven'].includes(view)) view='overzicht';
+let edit=null; // {coll,id,draft,step}
+let menuFilter={q:'',cat:'',kn:''};
+
+/* ---------- Hulpfuncties ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clone=o=>JSON.parse(JSON.stringify(o||{}));
+const getp=(o,p)=>p.split('.').reduce((a,k)=>a==null?undefined:a[k],o);
+function setp(o,p,v){const ks=p.split('.');let c=o;ks.slice(0,-1).forEach(k=>{if(c[k]==null||typeof c[k]!=='object')c[k]={};c=c[k]});c[ks[ks.length-1]]=v}
+const num=v=>(v===''||v==null||isNaN(Number(v)))?null:Number(v);
+const f1=v=>v==null?'–':Number(v).toLocaleString('nl-NL',{maximumFractionDigits:1});
+const fs=v=>v==null?'–':(v>0?'+':'')+Number(v).toLocaleString('nl-NL',{maximumFractionDigits:1});
+const eur=v=>v==null?'–':Number(v).toLocaleString('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const dstr=s=>{if(!s)return '–';const d=new Date(s);return isNaN(d)?esc(s):d.toLocaleDateString('nl-NL',{day:'numeric',month:'short',year:'numeric'})};
+const today=()=>new Date().toISOString().slice(0,10);
+const list=c=>Object.entries(state[c]).map(([id,v])=>({id,...v}));
+const bedrijfNaam=id=>state.bedrijven[id]?.naam||'Onbekend bedrijf';
+const techNaam=t=>t.techId&&state.technologieen[t.techId]?state.technologieen[t.techId].naam:(t.techOmschrijving||'Technologie nog niet gekozen');
+function newId(c){try{if(db)return db.collection(c).doc().id}catch(e){}return 'x'+Math.random().toString(36).slice(2,12)}
+
+function avgDim(scores,d){if(!scores)return null;const v=d.items.map(([k])=>num(scores[k])).filter(x=>x!=null);return v.length?v.reduce((a,b)=>a+b,0)/v.length:null}
+const hasScores=m=>!!(m&&m.scores&&Object.values(m.scores).some(v=>v!=null&&v!==''));
+function fase(t){
+  if(hasScores(t.na))return 4;
+  if(t.impl&&(t.impl.datumStart||t.impl.training||t.impl.gebruik))return 3;
+  if(t.hyp&&t.hyp.dims&&Object.values(t.hyp.dims).some(d=>d&&d.verwachting))return 2;
+  if(hasScores(t.nul))return 1;
+  return 0;
+}
+function analyse(t){
+  const dims=DIMS.map(d=>{const voor=avgDim(t.nul?.scores,d),na=avgDim(t.na?.scores,d);const delta=(voor!=null&&na!=null)?na-voor:null;const verw=t.hyp?.dims?.[d.k]?.verwachting||'';return {d,voor,na,delta,verw,uitkomst:uitkomst(verw,delta)}});
+  const kw=[];
+  DIMS.forEach(d=>d.kw.forEach(([k,lab,u,lower])=>{const a=num(t.nul?.kwant?.[k]),b=num(t.na?.kwant?.[k]);if(a==null&&b==null)return;const delta=(a!=null&&b!=null)?b-a:null;kw.push({d,k,lab,u,lower,voor:a,na:b,delta,beter:delta==null||delta===0?null:(lower?delta<0:delta>0)})}));
+  const A=t.analyse||{};
+  const uren=num(A.tijdUren),tarief=num(A.uurkosten),weken=num(A.weken)??46;
+  const tijdEuro=(uren!=null&&tarief!=null)?uren*tarief*weken:null;
+  const overig=num(A.overigEuro);
+  const totaal=(tijdEuro==null&&overig==null)?null:(tijdEuro||0)+(overig||0);
+  const invest=num(t.impl?.investering);
+  const tvt=(invest!=null&&totaal>0)?invest/totaal:null;
+  return {dims,kw,uren,tarief,weken,tijdEuro,overig,totaal,invest,tvt};
+}
+function uitkomst(verw,delta){
+  if(delta==null||!verw)return '';
+  if(verw==='++'||verw==='+')return delta>0.25?'Uitgekomen':'Niet uitgekomen';
+  if(verw==='0')return Math.abs(delta)<=0.25?'Uitgekomen':(delta>0?'Beter dan verwacht':'Onverwacht negatief');
+  if(verw==='-')return delta<-0.25?'Risico opgetreden':'Risico niet opgetreden';
+  return '';
+}
+const verwLabel=v=>(VERW.find(x=>x[0]===v)||['',''])[1];
+
+/* ---------- Opslaan ---------- */
+const saver={};
+function setSave(cls,txt){const el=$('#savestate');if(el){el.className='save '+cls;el.textContent=txt}}
+function queueSave(){
+  if(!edit)return;const {coll,id}=edit;const k=coll+'/'+id;const s=saver[k]||(saver[k]={});
+  clearTimeout(s.timer);setSave('dirty','Wijzigingen nog niet opgeslagen');
+  s.timer=setTimeout(()=>flush(coll,id,edit&&edit.id===id?edit.draft:null),900);
+}
+async function flush(coll,id,data){
+  const k=coll+'/'+id;const s=saver[k]||(saver[k]={});clearTimeout(s.timer);s.timer=null;
+  if(data)s.data=data;if(!s.data)return;
+  if(s.inflight){s.pending=true;return}
+  s.inflight=true;setSave('saving','Opslaan…');
+  const body=clone(s.data);body.bijgewerkt=new Date().toISOString();
+  try{
+    if(db&&!readOnly)await db.collection(coll).doc(id).set(body);
+    state[coll][id]=body;
+    setSave('saved',db?'Opgeslagen':'Alleen in dit venster bewaard');
+  }catch(e){
+    if(e&&e.code==='invalid_argument'){readOnly=true;setSave('error','Je hebt geen schrijfrechten op deze tool. Vraag de eigenaar om je als bijdrager toe te voegen.')}
+    else if(e&&e.code==='quota_exceeded'){setSave('error','De opslag is vol. Verwijder oude voorbeelden of metingen.')}
+    else{setSave('error','Opslaan mislukt. Controleer je verbinding; je invoer staat nog in dit scherm.')}
+  }
+  s.inflight=false;
+  if(s.pending){s.pending=false;flush(coll,id)}
+}
+async function flushNow(){if(edit){const s=saver[edit.coll+'/'+edit.id];if(s&&(s.timer||s.inflight||s.pending))await flush(edit.coll,edit.id,edit.draft)}}
+async function removeDoc(coll,id){delete state[coll][id];if(db)try{await db.collection(coll).doc(id).delete()}catch(e){}}
+
+/* ---------- Modal ---------- */
+function modal(html,onOk,okLabel='Bevestigen',danger=false){
+  const root=$('#modalroot');
+  root.innerHTML=`<div class="modalbg" role="dialog" aria-modal="true"><div class="modal">${html}<div class="row" style="justify-content:flex-end"><button class="btn" id="m-cancel">Annuleren</button><button class="btn ${danger?'danger':'primary'}" id="m-ok">${esc(okLabel)}</button></div></div></div>`;
+  const close=()=>{root.innerHTML=''};
+  $('#m-cancel').onclick=close;
+  $('#m-ok').onclick=async()=>{const r=await onOk(root);if(r!==false)close()};
+  const first=root.querySelector('input,select,textarea')||$('#m-ok');first&&first.focus();
+}
+function quickBedrijf(cb){
+  modal(`<h3>Nieuw bedrijf</h3>
+  <label class="f">Naam<input type="text" id="qb-naam"></label>
+  <div class="grid2"><label class="f">Plaats<input type="text" id="qb-plaats"></label>
+  <label class="f">Sector<select id="qb-sector"><option value=""></option>${SECTOR.map(s=>`<option>${esc(s)}</option>`).join('')}</select></label></div>`,
+  async()=>{const naam=$('#qb-naam').value.trim();if(!naam){$('#qb-naam').focus();return false}
+    const id=newId('bedrijven');const body={naam,plaats:$('#qb-plaats').value.trim(),sector:$('#qb-sector').value,aangemaakt:new Date().toISOString()};
+    state.bedrijven[id]=body;if(db&&!readOnly){try{await db.collection('bedrijven').doc(id).set(body)}catch(e){}}
+    cb(id);},'Toevoegen');
+}
+
+/* ---------- Velden ---------- */
+const val=p=>{const v=edit?getp(edit.draft,p):undefined;return v==null?'':v};
+const txt=(p,lab,h='',type='text')=>`<label class="f">${esc(lab)}${h?`<span class="h">${esc(h)}</span>`:''}<input type="${type}" id="f-${p.replace(/\./g,'-')}" data-path="${p}" value="${esc(val(p))}"></label>`;
+const area=(p,lab,h='')=>`<label class="f">${esc(lab)}${h?`<span class="h">${esc(h)}</span>`:''}<textarea id="f-${p.replace(/\./g,'-')}" data-path="${p}">${esc(val(p))}</textarea></label>`;
+const sel=(p,lab,opts,h='')=>`<label class="f">${esc(lab)}${h?`<span class="h">${esc(h)}</span>`:''}<select id="f-${p.replace(/\./g,'-')}" data-path="${p}">${opts.map(o=>{const [v,l]=Array.isArray(o)?o:[o,o];return `<option value="${esc(v)}" ${String(val(p))===String(v)?'selected':''}>${esc(l)}</option>`}).join('')}</select></label>`;
+function chips(p,opts){const cur=getp(edit.draft,p)||[];return `<div class="chips">${opts.map(o=>{const [v,l]=Array.isArray(o)?o:[o,o];return `<label class="chip"><input type="checkbox" data-multi="${esc(v)}" data-path="${p}" ${cur.includes(v)?'checked':''}>${esc(l)}</label>`}).join('')}</div>`}
+function radios(p,opts){const cur=val(p);return `<div class="chips" role="radiogroup">${opts.map(o=>{const [v,l]=Array.isArray(o)?o:[o,o];return `<label class="chip"><input type="radio" name="r-${p}" data-path="${p}" value="${esc(v)}" ${String(cur)===String(v)?'checked':''}>${esc(l)}</label>`}).join('')}</div>`}
+function scale(p){const cur=num(getp(edit.draft,p));return `<div class="scale" role="group">${[1,2,3,4,5].map(n=>`<button type="button" data-score="${p}" data-v="${n}" class="${cur===n?'on':''}" aria-pressed="${cur===n}">${n}</button>`).join('')}<button type="button" class="na ${cur==null&&getp(edit.draft,p)===null?'on':''}" data-score="${p}" data-v="">n.v.t.</button></div>`}
+
+document.addEventListener('input',e=>{const el=e.target;if(!edit||!el.dataset||!el.dataset.path)return;if(el.type==='checkbox'||el.type==='radio'||el.tagName==='SELECT')return;
+  setp(edit.draft,el.dataset.path,el.type==='number'?num(el.value):el.value);queueSave();afterChange(el.dataset.path)});
+document.addEventListener('change',e=>{const el=e.target;if(!edit||!el.dataset||!el.dataset.path)return;
+  if(el.type==='checkbox'&&el.dataset.multi!==undefined){const arr=(getp(edit.draft,el.dataset.path)||[]).filter(x=>x!==el.dataset.multi);if(el.checked)arr.push(el.dataset.multi);setp(edit.draft,el.dataset.path,arr)}
+  else if(el.type==='checkbox')setp(edit.draft,el.dataset.path,el.checked);
+  else if(el.type==='radio'||el.tagName==='SELECT')setp(edit.draft,el.dataset.path,el.value);
+  else return;
+  queueSave();afterChange(el.dataset.path)});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-score]');if(!b||!edit)return;const p=b.dataset.score;const v=b.dataset.v===''?null:Number(b.dataset.v);setp(edit.draft,p,v);
+  b.parentElement.querySelectorAll('button').forEach(x=>{const on=(x.dataset.v===''?null:Number(x.dataset.v))===v;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});queueSave();afterChange(p)});
+function afterChange(p){
+  if(!edit)return;
+  if(edit.coll==='trajecten'){
+    if(p==='modus'||p==='techId'||p==='bedrijfId'){renderEditor();return}
+    const c=$('#computed');if(c)c.innerHTML=computedBlock(edit.draft);
+    updateStepMarks();
+  }
+  if(edit.coll==='inventarisaties'&&p==='gebruikt_ja'){renderInvEditor()}
+}
+
+/* ---------- Navigatie ---------- */
+document.getElementById('tabs').addEventListener('click',async e=>{const b=e.target.closest('button[data-view]');if(!b)return;await flushNow();edit=null;view=b.dataset.view;try{history.replaceState(null,'','#'+view)}catch(_){location.hash=view}render()});
+window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(v&&v!==view&&['overzicht','impact','inventarisatie','menukaart','bedrijven'].includes(v)){edit=null;view=v;render()}});
+async function back(){await flushNow();edit=null;render()}
+
+function render(){
+  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-current',b.dataset.view===view?'page':'false'));
+  const m=$('#main');
+  if(edit){
+    if(edit.coll==='trajecten')return renderEditor();
+    if(edit.coll==='inventarisaties')return renderInvEditor();
+    if(edit.coll==='bedrijven')return renderBedrijfEditor();
+    if(edit.coll==='technologieen')return renderTechEditor();
+  }
+  let h='';
+  if(!db&&loaded)h+=`<div class="banner">Geen verbinding met de gedeelde opslag. Je kunt de tool bekijken en invullen, maar invoer wordt niet bewaard. Herlaad de pagina of controleer of de server bereikbaar is.</div>`;
+  if(!loaded)h+=`<div class="banner" id="loadnote">Gegevens laden…</div>`;
+  h+={overzicht:renderOverzicht,impact:renderImpactList,inventarisatie:renderInvList,menukaart:renderMenu,bedrijven:renderBedrijven}[view]();
+  m.innerHTML=h;
+  bindView();
+}
+
+/* ---------- Overzicht ---------- */
+function regionaal(){
+  const T=list('trajecten'),B=list('bedrijven'),I=list('inventarisaties');
+  const gemeten=T.filter(t=>fase(t)===4&&hasScores(t.nul));
+  const perFase=FASEN.map((_,i)=>T.filter(t=>fase(t)===i).length);
+  const dimAvg=DIMS.map(d=>{const ds=gemeten.map(t=>{const a=avgDim(t.nul.scores,d),b=avgDim(t.na.scores,d);return a!=null&&b!=null?b-a:null}).filter(x=>x!=null);return {d,n:ds.length,v:ds.length?ds.reduce((a,b)=>a+b,0)/ds.length:null}});
+  let doelVoor=0,doelNa=0,doelN=0,besparing=0,besN=0,invest=0;
+  gemeten.forEach(t=>{const a=num(t.nul?.kwant?.q_doelgroep),b=num(t.na?.kwant?.q_doelgroep);if(a!=null&&b!=null){doelVoor+=a;doelNa+=b;doelN++}const an=analyse(t);if(an.totaal!=null){besparing+=an.totaal;besN++}if(an.invest!=null)invest+=an.invest});
+  const terug=T.filter(t=>t.modus==='terugblik').length;
+  return {T,B,I,gemeten,perFase,dimAvg,doelVoor,doelNa,doelN,besparing,besN,invest,terug};
+}
+function dimBars(rows){
+  const max=2;
+  return `<div class="bars">${rows.map(r=>{const v=r.v;let fill='';if(v!=null){const c=Math.max(-max,Math.min(max,v));const w=Math.abs(c)/(2*max)*100;const left=c>=0?50:50-w;fill=`<div class="fill ${c<0?'neg':''}" style="left:${left}%;width:${w}%"></div>`}
+    return `<div class="bar"><span>${esc(r.label)}</span><div class="track" aria-hidden="true">${fill}<div class="zero" style="left:calc(50% - 1px)"></div></div><span class="v">${fs(v)}</span></div>`}).join('')}
+    <div class="bar small muted"><span></span><div class="row between"><span>−2</span><span>0</span><span>+2</span></div><span></span></div></div>`;
+}
+function renderOverzicht(){
+  const R=regionaal();
+  const I=R.I;const gebruikJa=I.filter(i=>i.gebruikt_ja==='ja').length;
+  const kennis=I.map(i=>num(i.bekendheid)).filter(x=>x!=null);
+  const telling=(arr,key)=>{const c={};arr.forEach(i=>(i[key]||[]).forEach(x=>c[x]=(c[x]||0)+1));return Object.entries(c).sort((a,b)=>b[1]-a[1])};
+  const kn=telling(I,'knelpunten'),be=telling(I,'belemmeringen'),inte=telling(I,'interesse');
+  const vervolg=I.filter(i=>i.vervolg==='ja').length;
+  const cnt=rows=>rows.length?`<table><tbody>${rows.slice(0,6).map(([k,v])=>`<tr><td>${esc(state.technologieen[k]?.naam||k)}</td><td class="num">${v}</td></tr>`).join('')}</tbody></table>`:`<p class="muted small">Nog geen antwoorden.</p>`;
+  return `
+  <div class="row between"><h2>Regionaal overzicht</h2><div class="row"><button class="btn" id="copysum">Kopieer samenvatting voor het regionaal beraad</button><button class="btn" id="csv">Download alle metingen (CSV)</button><a class="btn" href="/api/export" download>Back-up (JSON)</a></div></div>
+  <div class="tiles">
+    <div class="tile"><b>${R.B.length}</b><span>bedrijven in de monitor</span></div>
+    <div class="tile"><b>${R.T.length}</b><span>impacttrajecten, waarvan ${R.terug} met terugblik-nulmeting</span></div>
+    <div class="tile"><b>${R.gemeten.length}</b><span>trajecten met voor- én nameting</span></div>
+    <div class="tile"><b>${R.doelN?fs(R.doelNa-R.doelVoor):'–'}</b><span>verschil in inwoners uit doelgroep op ondersteunde taken${R.doelN?` (${R.doelN} trajecten)`:''}</span></div>
+    <div class="tile"><b>${R.besN?eur(R.besparing):'–'}</b><span>geschatte besparing per jaar${R.besN?` (${R.besN} trajecten)`:''}</span></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Gemiddelde verandering per dimensie</h3><p class="muted small">Verschil tussen voor- en nameting op een schaal van 1 tot 5, gemiddeld over ${R.gemeten.length} gemeten trajecten.</p>${R.gemeten.length?dimBars(R.dimAvg.map(x=>({label:x.d.n,v:x.v}))):`<div class="empty">Zodra een traject een nul- én tweede meting heeft, verschijnt hier het effect per dimensie.</div>`}</div>
+    <div class="card"><h3>Trajecten per fase</h3><table><tbody>${FASEN.map((f,i)=>`<tr><td>${esc(f)}</td><td class="num">${R.perFase[i]}</td></tr>`).join('')}</tbody></table></div>
+  </div>
+  <div class="card"><h3>Inventarisatie bij werkgevers</h3>
+    <div class="tiles">
+      <div class="tile"><b>${I.length}</b><span>werkgevers bevraagd</span></div>
+      <div class="tile"><b>${I.length?Math.round(gebruikJa/I.length*100)+'%':'–'}</b><span>zet al inclusieve technologie in</span></div>
+      <div class="tile"><b>${kennis.length?f1(kennis.reduce((a,b)=>a+b,0)/kennis.length):'–'}</b><span>gemiddelde bekendheid (1 tot 5)</span></div>
+      <div class="tile"><b>${vervolg}</b><span>wil een vervolggesprek met TINT</span></div>
+    </div>
+    <div class="grid3"><div><h4>Grootste knelpunten</h4>${cnt(kn)}</div><div><h4>Belemmeringen</h4>${cnt(be)}</div><div><h4>Interesse in</h4>${cnt(inte)}</div></div>
+  </div>`;
+}
+function samenvatting(){
+  const R=regionaal();const I=R.I;
+  const lines=[];
+  lines.push(`Stand impactmonitor TINT Achterhoek per ${new Date().toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'})}`);
+  lines.push('');
+  lines.push(`Bedrijven in de monitor: ${R.B.length}. Impacttrajecten: ${R.T.length}, waarvan ${R.gemeten.length} met een voor- en nameting. Bij ${R.terug} trajecten is de nulmeting achteraf vastgesteld (terugblik), omdat de technologie al in gebruik was.`);
+  if(R.gemeten.length){lines.push('');lines.push('Gemiddelde verandering per dimensie (schaal 1 tot 5):');R.dimAvg.forEach(x=>lines.push(`- ${x.d.n}: ${fs(x.v)}${x.n?` (n=${x.n})`:''}`))}
+  if(R.doelN)lines.push(`Inwoners uit een doelgroep op ondersteunde taken: van ${R.doelVoor} naar ${R.doelNa} (${R.doelN} trajecten).`);
+  if(R.besN)lines.push(`Geschatte besparing: ${eur(R.besparing)} per jaar over ${R.besN} trajecten (schatting werkgever, uitgangspunten per traject vastgelegd).`);
+  lines.push('');
+  lines.push(`Inventarisatie: ${I.length} werkgevers bevraagd${I.length?`, waarvan ${Math.round(I.filter(i=>i.gebruikt_ja==='ja').length/I.length*100)}% al inclusieve technologie inzet`:''}.`);
+  lines.push(`Menukaart: ${Object.keys(state.technologieen).length} toepassingen beschreven.`);
+  lines.push('');
+  lines.push('Methode: scores zijn een groepsbeeld dat de TINT-adviseur samen met werkgever en betrokken medewerkers vastlegt. Kleine aantallen; lees verschillen als indicatie, niet als statistisch bewezen effect.');
+  return lines.join('\n');
+}
+function csv(){
+  const head=['bedrijf','plaats','sector','technologie','taak','modus','fase','datum_nulmeting','datum_tweede_meting'];
+  DIMS.forEach(d=>head.push(d.k+'_voor',d.k+'_na',d.k+'_verschil',d.k+'_verwachting'));
+  DIMS.forEach(d=>d.kw.forEach(([k])=>head.push(k+'_voor',k+'_na')));
+  head.push('investering','besparing_per_jaar','terugverdientijd_jaar');
+  const rows=[head];
+  list('trajecten').forEach(t=>{const a=analyse(t);const b=state.bedrijven[t.bedrijfId]||{};
+    const r=[b.naam||'',b.plaats||'',b.sector||'',techNaam(t),t.taak||'',t.modus||'',FASEN[fase(t)],t.nul?.datum||'',t.na?.datum||''];
+    a.dims.forEach(x=>r.push(x.voor??'',x.na??'',x.delta??'',x.verw));
+    DIMS.forEach(d=>d.kw.forEach(([k])=>r.push(t.nul?.kwant?.[k]??'',t.na?.kwant?.[k]??'')));
+    r.push(a.invest??'',a.totaal??'',a.tvt??'');rows.push(r)});
+  return rows.map(r=>r.map(c=>{c=typeof c==='number'?String(Math.round(c*100)/100).replace('.',','):String(c);return /[;"\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c}).join(';')).join('\n');
+}
+async function saveFile(filename,data,fallbackTitle){
+  if(downloads){try{await downloads.save({filename,data});return}catch(e){}}
+  modal(`<h3>${esc(fallbackTitle)}</h3><p class="small muted">Downloaden is hier niet beschikbaar. Kopieer de inhoud en plak die in een bestand.</p><textarea style="min-height:220px" readonly>${esc(data)}</textarea>`,()=>{},'Sluiten');
+}
+async function copyText(t){try{await navigator.clipboard.writeText(t);toast('Gekopieerd naar het klembord')}catch(e){modal(`<h3>Samenvatting</h3><textarea style="min-height:260px" readonly>${esc(t)}</textarea>`,()=>{},'Sluiten')}}
+function toast(t){const el=document.createElement('div');el.className='banner';el.style.cssText='position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:30';el.textContent=t;document.body.appendChild(el);setTimeout(()=>el.remove(),2200)}
+
+/* ---------- Impactmeting: lijst ---------- */
+function renderImpactList(){
+  const T=list('trajecten').sort((a,b)=>(b.bijgewerkt||'').localeCompare(a.bijgewerkt||''));
+  return `<div class="row between"><div><h2>Impactmeting</h2><p class="muted small">Eén traject per toepassing per bedrijf. Doorloop de vier fasen; de rapportage volgt automatisch.</p></div><button class="btn primary" id="newtraj">Nieuw traject</button></div>
+  ${T.length?`<div class="card tw"><table><thead><tr><th>Bedrijf</th><th>Technologie en taak</th><th>Nulmeting</th><th>Fase</th><th>Bijgewerkt</th></tr></thead><tbody>
+  ${T.map(t=>`<tr class="click" data-open="trajecten:${esc(t.id)}" tabindex="0"><td><b>${esc(bedrijfNaam(t.bedrijfId))}</b>${state.bedrijven[t.bedrijfId]?.voorbeeld?' <span class="pill grey">voorbeeld</span>':''}</td><td>${esc(techNaam(t))}<div class="small muted">${esc(t.taak||'')}</div></td><td>${t.modus==='terugblik'?'<span class="pill ochre">terugblik</span>':'<span class="pill grey">vooraf</span>'}</td><td><span class="pill ${fase(t)===4?'good':''}">${FASEN[fase(t)]}</span></td><td class="small muted">${dstr(t.bijgewerkt)}</td></tr>`).join('')}
+  </tbody></table></div>`:`<div class="empty">Nog geen trajecten. Start met "Nieuw traject" tijdens of na het bedrijfsbezoek.</div>`}`;
+}
+function newTraject(){
+  modal(`<h3>Nieuw impacttraject</h3>
+  <p class="small">Is de technologie al in gebruik bij dit bedrijf?</p>
+  <div class="chips"><label class="chip"><input type="radio" name="nm" value="nieuw" checked>Nee, nog niet: nulmeting vooraf</label><label class="chip"><input type="radio" name="nm" value="terugblik">Ja, al in gebruik: terugblikmeting</label></div>
+  <p class="small muted">Bij een terugblik vraag je naar de situatie vóór de technologie en leg je dat vast als nulmeting. Het rapport vermeldt dat de nulmeting achteraf is gedaan.</p>`,
+  ()=>{const modus=document.querySelector('input[name=nm]:checked').value;const id=newId('trajecten');
+    edit={coll:'trajecten',id,draft:{modus,aangemaakt:new Date().toISOString(),nul:{datum:today(),scores:{},kwant:{}},hyp:{dims:{}},impl:{},na:{scores:{},kwant:{}},analyse:{weken:46}},step:0};
+    render();},'Start traject');
+}
+
+/* ---------- Impactmeting: editor ---------- */
+const STEPS=['Nulmeting','Impacthypothese','Implementatie','Tweede meting','Analyse en rapport'];
+function stepDone(t,i){return [hasScores(t.nul),!!(t.hyp&&t.hyp.dims&&Object.values(t.hyp.dims).some(d=>d&&d.verwachting)),!!(t.impl&&(t.impl.datumStart||t.impl.gebruik)),hasScores(t.na),!!(t.analyse&&(t.analyse.leerpunten||t.analyse.tijdUren!=null))][i]}
+function updateStepMarks(){document.querySelectorAll('.steps button').forEach((b,i)=>b.classList.toggle('done',stepDone(edit.draft,i)))}
+function renderEditor(){
+  const t=edit.draft;const terug=t.modus==='terugblik';
+  const bopts=[['','Kies een bedrijf…'],...list('bedrijven').sort((a,b)=>(a.naam||'').localeCompare(b.naam||'')).map(b=>[b.id,b.naam])];
+  const topts=[['','Kies uit de menukaart…'],...list('technologieen').sort((a,b)=>(a.naam||'').localeCompare(b.naam||'')).map(x=>[x.id,x.naam])];
+  let h=`<div class="row between"><button class="btn ghost" id="back">← Terug naar overzicht</button><span class="save" id="savestate">${state.trajecten[edit.id]?'Opgeslagen':'Nog niet opgeslagen'}</span></div>
+  <div class="card"><div class="row between"><h2>${esc(t.bedrijfId?bedrijfNaam(t.bedrijfId):'Nieuw traject')}</h2>${terug?'<span class="pill ochre">Nulmeting via terugblik</span>':'<span class="pill grey">Nulmeting vooraf</span>'}</div>
+  <div class="grid2">
+    <div class="row" style="align-items:flex-end;flex-wrap:nowrap">${sel('bedrijfId','Bedrijf',bopts)}<button class="btn" id="addb" title="Nieuw bedrijf toevoegen">+</button></div>
+    ${sel('techId','Technologie (menukaart)',topts)}
+    ${txt('techOmschrijving','Toepassing in eigen woorden','Bijv. merk, type of hoe het wordt ingezet')}
+    ${txt('taak','Werkproces of taak','Welke taak verandert er door de technologie?')}
+    ${sel('kennisinstelling','Betrokken kennisinstelling',[['',''],...KENNIS])}
+    ${sel('modus','Soort nulmeting',[['nieuw','Vooraf (technologie nog niet in gebruik)'],['terugblik','Terugblik (technologie al in gebruik)']])}
+  </div></div>
+  <nav class="steps" aria-label="Fasen">${STEPS.map((s,i)=>`<button data-step="${i}" class="${stepDone(t,i)?'done':''}" aria-current="${edit.step===i?'step':'false'}"><i>${i+1}</i>${esc(s)}</button>`).join('')}</nav>
+  <div id="stepbody">${[stepNul,stepHyp,stepImpl,stepNa,stepAnalyse][edit.step]()}</div>
+  <div class="row between"><button class="btn danger" id="deltraj">Traject verwijderen</button><div class="row">${edit.step>0?`<button class="btn" data-step="${edit.step-1}">Vorige fase</button>`:''}${edit.step<4?`<button class="btn primary" data-step="${edit.step+1}">Volgende fase</button>`:''}</div></div>`;
+  $('#main').innerHTML=h;
+  document.querySelectorAll('[data-step]').forEach(b=>b.onclick=async()=>{edit.step=Number(b.dataset.step);renderEditor();window.scrollTo({top:0})});
+  $('#back').onclick=back;
+  $('#addb').onclick=()=>quickBedrijf(id=>{edit.draft.bedrijfId=id;queueSave();renderEditor()});
+  $('#deltraj').onclick=()=>modal(`<h3>Traject verwijderen?</h3><p>Alle metingen van dit traject worden verwijderd. Dit kan niet ongedaan worden gemaakt.</p>`,async()=>{const id=edit.id;clearTimeout((saver['trajecten/'+id]||{}).timer);edit=null;await removeDoc('trajecten',id);render()},'Verwijderen',true);
+  const rb=$('#rapdl');if(rb)rb.onclick=()=>saveFile(`Impactrapport ${bedrijfNaam(t.bedrijfId)} ${today()}.html`,reportDoc(t),'Rapport');
+  const rc=$('#rapcopy');if(rc)rc.onclick=()=>copyText(reportText(t));
+}
+function meting(prefix,t,isNul){
+  const terug=t.modus==='terugblik';
+  const vraag=isNul?(terug?'Hoe was het vóór de technologie er was?':'Hoe is het nu, zonder de technologie?'):'Hoe is het nu, met de technologie?';
+  let h=`<div class="hint ${isNul&&terug?'ochre':''}"><b>${esc(vraag)}</b> Geef per uitspraak een score van 1 (helemaal niet waar) tot 5 (helemaal waar). Vraag werkgever en betrokken medewerkers samen naar één groepsbeeld voor deze taak. Gebruik n.v.t. als een uitspraak niet past.${isNul&&terug?' Dit is een terugblik: noteer bij de cijfers zo goed mogelijk de situatie van toen en schrijf bij twijfel "schatting" in de toelichting.':''}</div>
+  <div class="grid3">${txt(prefix+'.datum','Datum','', 'date')}${txt(prefix+'.aanwezig','Wie waren erbij?','Functies, geen namen nodig')}${txt(prefix+'.medewerkers','Aantal medewerkers op deze taak','', 'number')}</div>`;
+  DIMS.forEach(d=>{
+    const a=avgDim(getp(edit.draft,prefix+'.scores'),d);
+    h+=`<div class="card"><div class="dimhead"><h3>${esc(d.n)}</h3><span class="pill grey">gem. ${f1(a)}</span></div>
+    ${d.items.map(([k,q])=>`<div class="q"><span>${esc(q)}</span>${scale(prefix+'.scores.'+k)}</div>`).join('')}
+    ${d.kw.length?`<div class="kw">${d.kw.map(([k,lab,u])=>txt(prefix+'.kwant.'+k,`${lab} (${u})`,'Optioneel, alleen als het bedrijf dit weet','number')).join('')}</div>`:''}
+    </div>`});
+  return h;
+}
+function stepNul(){
+  const t=edit.draft;
+  return `<div class="card"><h3>1. Nulmeting${t.modus==='terugblik'?' (terugblik)':''}</h3>
+  ${area('nul.proces','Beschrijving van het werkproces zonder technologie','Wat doet de medewerker, hoe vaak, met welke hulpmiddelen?')}
+  <div class="f" style="font-weight:600;font-size:.92rem">Knelpunten in het werk</div>${chips('nul.knelpunten',KNELPUNT)}
+  ${area('nul.knelpuntToel','Toelichting op de knelpunten')}
+  </div>${meting('nul',t,true)}`;
+}
+function stepHyp(){
+  const t=edit.draft;const tech=state.technologieen[t.techId];
+  const terug=t.modus==='terugblik';
+  return `<div class="card"><h3>2. Impacthypothese</h3>
+  <p class="muted small">${terug?'Welke effecten verwachtte het bedrijf toen het de technologie aanschafte? Leg dat vast vóór je de tweede meting bespreekt.':'Bepaal samen met werkgever en medewerkers welke effecten jullie van de technologie verwachten.'}</p>
+  ${tech&&tech.dimensies&&tech.dimensies.length?`<div class="hint">Volgens de menukaart heeft <b>${esc(tech.naam)}</b> meestal effect op: ${tech.dimensies.map(k=>esc(DIMS.find(d=>d.k===k)?.n||k)).join(', ')}.</div>`:''}
+  ${txt('hyp.betrokkenen','Opgesteld met','Bijv. directeur, teamleider, twee medewerkers')}
+  </div>
+  ${DIMS.map(d=>`<div class="card"><div class="dimhead"><h3>${esc(d.n)}</h3></div>
+    <div class="grid2">${sel('hyp.dims.'+d.k+'.verwachting','Verwacht effect',VERW)}${txt('hyp.dims.'+d.k+'.toel','Waarom, en waaraan zie je het?','Bijv. minder tillen, dus minder uitval')}</div>
+    ${d.kw.length?`<div><div class="small" style="font-weight:600">KPI's voor deze toepassing</div>${chips('hyp.kpis',d.kw.map(([k,l])=>[k,l]))}</div>`:''}
+  </div>`).join('')}`;
+}
+function stepImpl(){
+  return `<div class="card"><h3>3. Implementatie en borging</h3>
+  <div class="grid3">${txt('impl.datumStart','In gebruik sinds','', 'date')}${txt('impl.investering','Investering (€, excl. btw)','', 'number')}${txt('impl.voucher','Waarvan TINT-voucher (€)','', 'number')}</div>
+  <div class="grid2">${area('impl.training','Training','Wie gaf de training (meestal de leverancier), hoe lang, hoeveel medewerkers?')}${area('impl.proces','Procesaanpassingen','Wat is er in het werkproces of de werkplek veranderd?')}</div>
+  <h4>Monitoring gebruik</h4>
+  <div class="grid3">${txt('impl.gebruikers','Aantal vaste gebruikers','', 'number')}${sel('impl.gebruik','Hoe vaak wordt het gebruikt?',[['',''],'Dagelijks','Wekelijks','Af en toe','Niet meer'])}${sel('impl.adoptie','Acceptatie door medewerkers',[['',''],['1','1 · Weerstand'],['2','2'],['3','3 · Neutraal'],['4','4'],['5','5 · Volledig omarmd']])}</div>
+  <div class="grid2">${area('impl.gebruiksdata','Gebruiksdata','Bijv. gebruiksuren uit het apparaat, logboek, aantal handelingen')}${area('impl.knelpunten','Knelpunten bij invoering')}</div>
+  ${area('impl.verslag','Implementatieverslag (kort)','Wat ging goed, wat moest anders?')}
+  </div>`;
+}
+function stepNa(){
+  const t=edit.draft;
+  return `<div class="card"><h3>4. Tweede meting</h3><p class="muted small">Doe deze meting als de technologie enkele maanden in gebruik is${t.modus==='terugblik'?'. Bij een terugblik kan dat in hetzelfde gesprek als de nulmeting.':'.'} Gebruik dezelfde uitspraken als bij de nulmeting.</p>
+  ${area('na.veranderd','Wat is er volgens de werkvloer veranderd?')}</div>${meting('na',t,false)}`;
+}
+function computedBlock(t){
+  const a=analyse(t);
+  return `<div class="tiles">
+    <div class="tile"><b>${a.tijdEuro!=null?eur(a.tijdEuro):'–'}</b><span>waarde tijdsbesparing per jaar</span></div>
+    <div class="tile"><b>${a.totaal!=null?eur(a.totaal):'–'}</b><span>totale besparing per jaar</span></div>
+    <div class="tile"><b>${a.tvt!=null?f1(a.tvt)+' jaar':'–'}</b><span>terugverdientijd</span></div>
+  </div>`;
+}
+function stepAnalyse(){
+  const t=edit.draft;
+  return `<div class="card"><h3>5. Impactanalyse</h3>
+  <h4>Economische impact</h4>
+  <div class="grid3">${txt('analyse.tijdUren','Tijdsbesparing (uur per week)','Schatting van de werkgever','number')}${txt('analyse.uurkosten','Loonkosten per uur (€)','', 'number')}${txt('analyse.weken','Werkweken per jaar','Standaard 46','number')}${txt('analyse.overigEuro','Overige besparing per jaar (€)','Bijv. minder afkeur of verzuimkosten','number')}</div>
+  <div id="computed">${computedBlock(t)}</div>
+  <div class="grid2">${area('analyse.econToel','Toelichting economische impact')}${area('analyse.sociaal','Sociale impact','Inzetbaarheid en welzijn: wat betekent het voor medewerkers en inwoners?')}</div>
+  <div class="grid2">${area('analyse.leerpunten','Leerpunten voor opschaling','Wat moet een volgend bedrijf weten?')}${area('analyse.beleid','Input voor beleid en regionale besluitvorming')}</div>
+  </div>
+  <div class="row between"><h3>Rapportage</h3><div class="row"><button class="btn" id="rapcopy">Kopieer als tekst</button><button class="btn primary" id="rapdl">Download rapport</button></div></div>
+  <div class="report">${reportBody(t)}</div>`;
+}
+
+/* ---------- Rapport ---------- */
+function reportBody(t){
+  const a=analyse(t);const b=state.bedrijven[t.bedrijfId]||{};const terug=t.modus==='terugblik';
+  const kn=(t.nul?.knelpunten||[]).map(k=>KNELPUNT.find(x=>x[0]===k)?.[1]||k).join(', ');
+  return `<header><p class="small muted">TINT Achterhoek · Impactrapportage</p><h2>${esc(b.naam||'Bedrijf')}: ${esc(techNaam(t))}</h2></header>
+  <div class="meta">
+    <div><span class="muted">Plaats</span><br>${esc(b.plaats||'–')}</div>
+    <div><span class="muted">Sector</span><br>${esc(b.sector||'–')}</div>
+    <div><span class="muted">Taak</span><br>${esc(t.taak||'–')}</div>
+    <div><span class="muted">Nulmeting</span><br>${dstr(t.nul?.datum)}${terug?' (terugblik)':''}</div>
+    <div><span class="muted">Tweede meting</span><br>${dstr(t.na?.datum)}</div>
+    <div><span class="muted">Kennisinstelling</span><br>${esc(t.kennisinstelling||'–')}</div>
+  </div>
+  ${terug?`<p class="hint ochre small">De nulmeting is achteraf vastgesteld, omdat de technologie al in gebruik was. De uitgangssituatie berust op de herinnering van werkgever en medewerkers.</p>`:''}
+  <section><h3>1. Uitgangssituatie</h3><p>${esc(t.nul?.proces||'Nog niet beschreven.')}</p>${kn?`<p><b>Knelpunten:</b> ${esc(kn)}. ${esc(t.nul?.knelpuntToel||'')}</p>`:''}</section>
+  <section><h3>2. Resultaat per dimensie</h3><div class="tw"><table><thead><tr><th>Dimensie</th><th class="num">Voor</th><th class="num">Na</th><th class="num">Verschil</th><th>Verwachting</th><th>Uitkomst</th></tr></thead><tbody>
+  ${a.dims.map(x=>`<tr><td>${esc(x.d.n)}</td><td class="num">${f1(x.voor)}</td><td class="num">${f1(x.na)}</td><td class="num"><b>${fs(x.delta)}</b></td><td>${esc(verwLabel(x.verw)||'–')}</td><td>${x.uitkomst?`<span class="pill ${/^Uitgekomen|Beter|niet opgetreden/.test(x.uitkomst)?'good':'bad'}">${esc(x.uitkomst)}</span>`:'–'}</td></tr>`).join('')}
+  </tbody></table></div><p class="small muted">Schaal 1 tot 5, groepsbeeld per meting.</p>
+  ${a.kw.length?`<div class="tw"><table><thead><tr><th>Indicator</th><th class="num">Voor</th><th class="num">Na</th><th class="num">Verschil</th></tr></thead><tbody>${a.kw.map(k=>`<tr><td>${esc(k.lab)} <span class="muted small">(${esc(k.u)})</span>${(t.hyp?.kpis||[]).includes(k.k)?' <span class="pill">KPI</span>':''}</td><td class="num">${f1(k.voor)}</td><td class="num">${f1(k.na)}</td><td class="num">${k.beter==null?fs(k.delta):`<span class="pill ${k.beter?'good':'bad'}">${fs(k.delta)}</span>`}</td></tr>`).join('')}</tbody></table></div>`:''}
+  </section>
+  <section><h3>3. Implementatie</h3><p>In gebruik sinds ${dstr(t.impl?.datumStart)}. Gebruik: ${esc(t.impl?.gebruik||'–')}${t.impl?.gebruikers!=null&&t.impl?.gebruikers!==''?`, ${esc(t.impl.gebruikers)} vaste gebruikers`:''}. Acceptatie: ${t.impl?.adoptie?esc(t.impl.adoptie)+' van 5':'–'}.</p>
+  ${t.impl?.training?`<p><b>Training:</b> ${esc(t.impl.training)}</p>`:''}${t.impl?.proces?`<p><b>Procesaanpassingen:</b> ${esc(t.impl.proces)}</p>`:''}${t.impl?.knelpunten?`<p><b>Knelpunten bij invoering:</b> ${esc(t.impl.knelpunten)}</p>`:''}</section>
+  <section><h3>4. Economische impact</h3>
+  <p>Investering ${eur(a.invest)}${num(t.impl?.voucher)!=null?`, waarvan ${eur(num(t.impl.voucher))} TINT-voucher`:''}. ${a.totaal!=null?`Geschatte besparing ${eur(a.totaal)} per jaar${a.tijdEuro!=null?` (waarvan ${eur(a.tijdEuro)} uit ${f1(a.uren)} uur per week tijdsbesparing tegen ${eur(a.tarief)} per uur over ${f1(a.weken)} weken)`:''}.`:'Besparing nog niet ingeschat.'}${a.tvt!=null?` Terugverdientijd circa ${f1(a.tvt)} jaar.`:''}</p>
+  ${t.analyse?.econToel?`<p>${esc(t.analyse.econToel)}</p>`:''}</section>
+  <section><h3>5. Sociale impact</h3><p>${esc(t.analyse?.sociaal||'Nog niet beschreven.')}</p>${t.na?.veranderd?`<p><b>Volgens de werkvloer:</b> ${esc(t.na.veranderd)}</p>`:''}</section>
+  <section><h3>6. Leerpunten voor opschaling</h3><p>${esc(t.analyse?.leerpunten||'–')}</p></section>
+  <section><h3>7. Input voor beleid</h3><p>${esc(t.analyse?.beleid||'–')}</p></section>
+  <p class="small muted">Methode: TINT-impactmeting op vijf dimensies (inzetbaarheid, zelfstandigheid, productiviteit, kwaliteit & veiligheid, welzijn). Scores zijn een groepsbeeld van werkgever en medewerkers (${esc(t.nul?.aanwezig||'deelnemers niet vastgelegd')}). Financiële cijfers zijn schattingen van de werkgever.</p>`;
+}
+function reportDoc(t){
+  const css=`@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');body{font-family:Manrope,Arial,sans-serif;color:#1f1d2b;max-width:820px;margin:32px auto;padding:0 20px;line-height:1.5;border-top:6px solid #604ce2}h2,h3{font-weight:800;color:#4f3bc7}h2{font-size:22px}h3{font-size:16px;margin:18px 0 6px}table{border-collapse:collapse;width:100%;margin:6px 0}th,td{border-bottom:1px solid #dcd6f5;padding:6px 8px;text-align:left}th{color:#5e5a73;font-size:13px}.num{text-align:right}.muted{color:#5e5a73}.small{font-size:13px}.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 16px;font-size:14px;background:#f3f0ff;padding:12px;border-radius:8px}.pill{font-size:12px;font-weight:bold;padding:1px 8px;border-radius:9px;background:#e6e0ff;color:#4f3bc7}.pill.bad{background:#fbe3df;color:#b3372a}.pill.good{background:#d3f9e4;color:#0d7a3d}.hint{background:#fff1d4;border-left:4px solid #fdb93b;padding:8px 10px;border-radius:6px}@media print{body{margin:0}}`;
+  return `<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><title>Impactrapport ${esc(bedrijfNaam(t.bedrijfId))}</title><style>${css}</style></head><body>${reportBody(t)}</body></html>`;
+}
+function reportText(t){const d=document.createElement('div');d.innerHTML=reportBody(t);d.querySelectorAll('h2,h3,p,tr,section,div.meta>div').forEach(e=>e.append('\n'));d.querySelectorAll('td,th').forEach(e=>e.append('\t'));return d.textContent.replace(/\n{3,}/g,'\n\n').trim()}
+
+/* ---------- Inventarisatie ---------- */
+function renderInvList(){
+  const I=list('inventarisaties').sort((a,b)=>(b.datum||'').localeCompare(a.datum||''));
+  return `<div class="row between"><div><h2>Inventarisatie</h2><p class="muted small">Korte vragenlijst (circa 10 minuten) voor elke werkgever, ook als die (nog) geen voucher heeft. Vult de KPI over huidige inzet en kennis van inclusieve technologie.</p></div><button class="btn primary" id="newinv">Nieuwe inventarisatie</button></div>
+  ${I.length?`<div class="card tw"><table><thead><tr><th>Bedrijf</th><th>Datum</th><th>Zet technologie in</th><th>Bekendheid</th><th>Vervolg</th></tr></thead><tbody>
+  ${I.map(i=>`<tr class="click" data-open="inventarisaties:${esc(i.id)}" tabindex="0"><td><b>${esc(bedrijfNaam(i.bedrijfId))}</b></td><td>${dstr(i.datum)}</td><td>${esc(i.gebruikt_ja||'–')}</td><td>${i.bekendheid?esc(i.bekendheid)+' / 5':'–'}</td><td>${esc(i.vervolg||'–')}</td></tr>`).join('')}</tbody></table></div>`:`<div class="empty">Nog geen inventarisaties.</div>`}`;
+}
+function renderInvEditor(){
+  const techs=list('technologieen').sort((a,b)=>(a.naam||'').localeCompare(b.naam||'')).map(x=>[x.id,x.naam]);
+  const bopts=[['','Kies een bedrijf…'],...list('bedrijven').sort((a,b)=>(a.naam||'').localeCompare(b.naam||'')).map(b=>[b.id,b.naam])];
+  const i=edit.draft;
+  $('#main').innerHTML=`<div class="row between"><button class="btn ghost" id="back">← Terug naar overzicht</button><span class="save" id="savestate">${state.inventarisaties[edit.id]?'Opgeslagen':'Nog niet opgeslagen'}</span></div>
+  <div class="card"><h2>Inventarisatie inclusieve technologie</h2>
+  <div class="grid3"><div class="row" style="align-items:flex-end;flex-wrap:nowrap">${sel('bedrijfId','Bedrijf',bopts)}<button class="btn" id="addb">+</button></div>${txt('datum','Datum','', 'date')}${sel('wijze','Hoe afgenomen',[['',''],'Bedrijfsbezoek','Telefonisch','Bijeenkomst of event','Online'])}${txt('door','Afgenomen door')}${txt('respondent','Functie respondent')}</div></div>
+  <div class="card"><h3>1. Huidige inzet</h3>
+  <p>Zet uw bedrijf al technologie in die werk lichter, eenvoudiger of toegankelijker maakt?</p>${radios('gebruikt_ja',['ja','nee','weet niet'])}
+  ${i.gebruikt_ja==='ja'?`<p>Welke?</p>${chips('gebruikt',techs)}${txt('gebruiktAnders','Anders, namelijk')}`:''}
+  <p>Hoe bekend bent u met inclusieve technologie? <span class="muted small">(1 = nooit van gehoord, 5 = we passen het actief toe)</span></p>${scale('bekendheid')}
+  </div>
+  <div class="card"><h3>2. Knelpunten in het werk</h3><p>Waar loopt u in het werk tegenaan?</p>${chips('knelpunten',INV_KNEL)}${txt('knelpuntAnders','Anders, namelijk')}
+  <p>Heeft u medewerkers met een afstand tot de arbeidsmarkt in dienst?</p>${radios('afstand',['ja','nee','nee, maar wel interesse'])}${txt('afstandAantal','Zo ja, hoeveel ongeveer?','', 'number')}</div>
+  <div class="card"><h3>3. Interesse en belemmeringen</h3><p>Voor welke toepassingen heeft u interesse?</p>${chips('interesse',techs)}
+  <p>Wat houdt u tegen om technologie in te zetten?</p>${chips('belemmeringen',INV_BELEM)}</div>
+  <div class="card"><h3>4. Vervolg</h3><p>Wilt u een vervolggesprek of advies van TINT?</p>${radios('vervolg',['ja','nee','later'])}${area('opmerkingen','Opmerkingen')}
+  <label class="chip" style="align-self:flex-start"><input type="checkbox" data-path="toestemming" ${i.toestemming?'checked':''}>Bedrijf mag als gebruiker op de menukaart genoemd worden</label></div>
+  <div class="row"><button class="btn danger" id="delinv">Inventarisatie verwijderen</button></div>`;
+  $('#back').onclick=back;
+  $('#addb').onclick=()=>quickBedrijf(id=>{edit.draft.bedrijfId=id;queueSave();renderInvEditor()});
+  $('#delinv').onclick=()=>modal('<h3>Inventarisatie verwijderen?</h3>',async()=>{const id=edit.id;edit=null;await removeDoc('inventarisaties',id);render()},'Verwijderen',true);
+}
+
+/* ---------- Menukaart ---------- */
+function gebruikers(){
+  const m={};const add=(tid,bid)=>{if(!tid||!bid)return;(m[tid]=m[tid]||new Set()).add(bid)};
+  list('trajecten').forEach(t=>add(t.techId,t.bedrijfId));
+  list('inventarisaties').forEach(i=>(i.gebruikt||[]).forEach(tid=>add(tid,i.bedrijfId)));
+  return m;
+}
+function magNoemen(bid){const b=state.bedrijven[bid];if(!b)return false;if(b.toestemming)return true;return list('inventarisaties').some(i=>i.bedrijfId===bid&&i.toestemming)}
+function renderMenu(){
+  const G=gebruikers();
+  const q=menuFilter.q.toLowerCase();
+  const T=list('technologieen').filter(x=>(!menuFilter.cat||x.categorie===menuFilter.cat)&&(!menuFilter.kn||(x.knelpunten||[]).includes(menuFilter.kn))&&(!q||(x.naam+' '+(x.omschrijving||'')).toLowerCase().includes(q))).sort((a,b)=>(a.categorie||'').localeCompare(b.categorie||'')||(a.naam||'').localeCompare(b.naam||''));
+  return `<div class="row between"><div><h2>Menukaart inclusieve technologie</h2><p class="muted small">Wat is er, waarvoor helpt het en wie gebruikt het in de Achterhoek. Gebruikers worden automatisch bijgehouden vanuit impactmetingen en inventarisaties.</p></div><button class="btn primary" id="newtech">Toepassing toevoegen</button></div>
+  <div class="row"><input type="text" id="mq" placeholder="Zoeken" value="${esc(menuFilter.q)}" style="max-width:220px" aria-label="Zoeken">
+  <select id="mcat" style="max-width:240px" aria-label="Categorie"><option value="">Alle categorieën</option>${TECHCAT.map(c=>`<option ${menuFilter.cat===c?'selected':''}>${esc(c)}</option>`).join('')}</select>
+  <select id="mkn" style="max-width:220px" aria-label="Knelpunt"><option value="">Alle knelpunten</option>${KNELPUNT.map(([k,l])=>`<option value="${k}" ${menuFilter.kn===k?'selected':''}>${l}</option>`).join('')}</select></div>
+  ${T.length?`<div class="techcards">${T.map(x=>{const us=[...(G[x.id]||[])];const named=us.filter(magNoemen);const anon=us.length-named.length;
+    return `<article class="tech"><div class="row between"><span class="pill grey">${esc(x.categorie||'Overig')}</span><button class="btn ghost small" data-open="technologieen:${esc(x.id)}">Bewerken</button></div>
+    <h3>${esc(x.naam)}</h3><p class="small">${esc(x.omschrijving||'')}</p>
+    ${(x.knelpunten||[]).length?`<p class="small"><b>Helpt bij:</b> ${(x.knelpunten||[]).map(k=>esc(KNELPUNT.find(y=>y[0]===k)?.[1]||k).toLowerCase()).join(', ')} knelpunten</p>`:''}
+    ${(x.dimensies||[]).length?`<div class="chips">${x.dimensies.map(k=>`<span class="pill">${esc(DIMS.find(d=>d.k===k)?.n||k)}</span>`).join('')}</div>`:''}
+    ${x.leveranciers?`<p class="small"><b>Leveranciers:</b> ${esc(x.leveranciers)}</p>`:''}${x.prijs?`<p class="small"><b>Prijsindicatie:</b> ${esc(x.prijs)}</p>`:''}
+    <div class="users"><b>In gebruik in de Achterhoek:</b> ${us.length?`${named.map(b=>esc(state.bedrijven[b]?.naam)+(state.bedrijven[b]?.plaats?' ('+esc(state.bedrijven[b].plaats)+')':'')).join(', ')}${anon?`${named.length?', ':''}${anon} ${anon===1?'bedrijf':'bedrijven'} (anoniem)`:''}`:'<span class="muted">nog geen bekende gebruikers</span>'}</div>
+    </article>`}).join('')}</div>`:`<div class="empty">Geen toepassingen gevonden.</div>`}`;
+}
+function renderTechEditor(){
+  $('#main').innerHTML=`<div class="row between"><button class="btn ghost" id="back">← Terug naar menukaart</button><span class="save" id="savestate">${state.technologieen[edit.id]?'Opgeslagen':'Nog niet opgeslagen'}</span></div>
+  <div class="card"><h2>Toepassing op de menukaart</h2>
+  <div class="grid2">${txt('naam','Naam')}${sel('categorie','Categorie',[['',''],...TECHCAT])}</div>
+  ${area('omschrijving','Wat doet het?','In gewone taal, voor een directeur-eigenaar')}
+  <p class="small" style="font-weight:600">Helpt bij knelpunten</p>${chips('knelpunten',KNELPUNT)}
+  <p class="small" style="font-weight:600">Verwacht effect op</p>${chips('dimensies',DIMS.map(d=>[d.k,d.n]))}
+  <div class="grid2">${txt('leveranciers','Leveranciers')}${txt('prijs','Prijsindicatie')}</div>
+  ${area('bron','Bronnen of links')}
+  </div><div class="row"><button class="btn danger" id="deltech">Verwijderen van de menukaart</button></div>`;
+  $('#back').onclick=back;
+  $('#deltech').onclick=()=>modal('<h3>Toepassing verwijderen?</h3><p>Trajecten die naar deze toepassing verwijzen houden hun eigen omschrijving.</p>',async()=>{const id=edit.id;edit=null;await removeDoc('technologieen',id);render()},'Verwijderen',true);
+}
+
+/* ---------- Bedrijven ---------- */
+function renderBedrijven(){
+  const B=list('bedrijven').sort((a,b)=>(a.naam||'').localeCompare(b.naam||''));
+  const T=list('trajecten'),I=list('inventarisaties');
+  return `<div class="row between"><h2>Bedrijven</h2><button class="btn primary" id="newbed">Bedrijf toevoegen</button></div>
+  ${B.length?`<div class="card tw"><table><thead><tr><th>Bedrijf</th><th>Plaats</th><th>Sector</th><th>Voucher</th><th class="num">Trajecten</th><th class="num">Inventarisaties</th></tr></thead><tbody>
+  ${B.map(b=>`<tr class="click" data-open="bedrijven:${esc(b.id)}" tabindex="0"><td><b>${esc(b.naam)}</b>${b.voorbeeld?' <span class="pill grey">voorbeeld</span>':''}</td><td>${esc(b.plaats||'')}</td><td>${esc(b.sector||'')}</td><td>${b.voucher?'<span class="pill">ja</span>':''}</td><td class="num">${T.filter(t=>t.bedrijfId===b.id).length}</td><td class="num">${I.filter(i=>i.bedrijfId===b.id).length}</td></tr>`).join('')}</tbody></table></div>`:`<div class="empty">Nog geen bedrijven.</div>`}`;
+}
+function renderBedrijfEditor(){
+  const T=list('trajecten').filter(t=>t.bedrijfId===edit.id);
+  $('#main').innerHTML=`<div class="row between"><button class="btn ghost" id="back">← Terug naar bedrijven</button><span class="save" id="savestate">${state.bedrijven[edit.id]?'Opgeslagen':'Nog niet opgeslagen'}</span></div>
+  <div class="card"><h2>${esc(edit.draft.naam||'Nieuw bedrijf')}</h2>
+  <div class="grid3">${txt('naam','Naam')}${txt('plaats','Plaats')}${sel('sector','Sector',[['',''],...SECTOR])}${sel('omvang','Aantal medewerkers',[['',''],...OMVANG])}${txt('contact','Contactpersoon')}${txt('voucherbedrag','Voucherbedrag (€)','', 'number')}</div>
+  <div class="chips"><label class="chip"><input type="checkbox" data-path="voucher" ${edit.draft.voucher?'checked':''}>Neemt deel met TINT-voucher</label>
+  <label class="chip"><input type="checkbox" data-path="toestemming" ${edit.draft.toestemming?'checked':''}>Mag als gebruiker op de menukaart genoemd worden</label></div>
+  ${area('notities','Notities')}</div>
+  ${T.length?`<div class="card"><h3>Impacttrajecten</h3><table><tbody>${T.map(t=>`<tr class="click" data-open="trajecten:${esc(t.id)}"><td>${esc(techNaam(t))}</td><td><span class="pill">${FASEN[fase(t)]}</span></td></tr>`).join('')}</tbody></table></div>`:''}
+  <div class="row"><button class="btn danger" id="delbed">Bedrijf verwijderen</button></div>`;
+  $('#back').onclick=back;bindOpen();
+  $('#delbed').onclick=()=>modal(`<h3>Bedrijf verwijderen?</h3><p>Ook de ${T.length} trajecten en de inventarisaties van dit bedrijf worden verwijderd.</p>`,async()=>{const id=edit.id;edit=null;for(const t of T)await removeDoc('trajecten',t.id);for(const i of list('inventarisaties').filter(i=>i.bedrijfId===id))await removeDoc('inventarisaties',i.id);await removeDoc('bedrijven',id);render()},'Verwijderen',true);
+}
+
+/* ---------- Binden ---------- */
+function openDoc(coll,id){edit={coll,id,draft:clone(state[coll][id]),step:0};if(coll==='trajecten'){const f=fase(edit.draft);edit.step=Math.min(f,4)}render();window.scrollTo({top:0})}
+function bindOpen(){document.querySelectorAll('[data-open]').forEach(el=>{const go=async()=>{await flushNow();const [c,id]=el.dataset.open.split(':');openDoc(c,id)};el.onclick=go;el.onkeydown=e=>{if(e.key==='Enter')go()}})}
+function bindView(){
+  bindOpen();
+  const on=(s,f)=>{const el=$(s);if(el)el.onclick=f};
+  on('#newtraj',newTraject);
+  on('#newinv',()=>{edit={coll:'inventarisaties',id:newId('inventarisaties'),draft:{datum:today()}};render()});
+  on('#newtech',()=>{edit={coll:'technologieen',id:newId('technologieen'),draft:{}};render()});
+  on('#newbed',()=>{edit={coll:'bedrijven',id:newId('bedrijven'),draft:{aangemaakt:new Date().toISOString()}};render()});
+  on('#copysum',()=>copyText(samenvatting()));
+  on('#csv',()=>saveFile(`TINT impactmetingen ${today()}.csv`,'﻿'+csv(),'CSV-export'));
+  const mq=$('#mq');if(mq){mq.oninput=()=>{menuFilter.q=mq.value;const pos=mq.selectionStart;render();const n=$('#mq');n.focus();n.setSelectionRange(pos,pos)}}
+  const mc=$('#mcat');if(mc)mc.onchange=()=>{menuFilter.cat=mc.value;render()};
+  const mk=$('#mkn');if(mk)mk.onchange=()=>{menuFilter.kn=mk.value;render()};
+}
+
+/* ---------- Start ---------- */
+render();
+(async()=>{
+  downloads=window.TintStore?.downloads||null;
+  try{const c=await (await fetch('/api/config',{credentials:'same-origin'})).json();if(c.auth){const b=$('#logout');b.hidden=false;b.onclick=()=>window.TintStore.logout()}}catch(e){}
+})();
+(async()=>{
+  db=window.TintStore?.db||null;
+  if(!db){loaded=true;$('#conn').textContent='Niet verbonden: invoer wordt niet bewaard';if(!edit)render();return}
+  $('#conn').textContent='Gedeelde opslag: verbonden';
+  let pending=new Set(COLLS);
+  const timer=setTimeout(()=>{if(!loaded){$('#conn').textContent='Opslag nog niet bereikbaar; gegevens zijn mogelijk niet actueel'}},10000);
+  COLLS.forEach(c=>{
+    db.collection(c).onSnapshot(snap=>{
+      const m={};snap.docs.forEach(d=>{if(d.exists)m[d.id]=d.data()});state[c]=m;
+      if(!snap.metadata.fromCache)pending.delete(c);
+      if(pending.size===0&&!loaded){loaded=true;clearTimeout(timer)}
+      if(!edit)render();
+    },err=>{pending.delete(c);if(pending.size===0){loaded=true;clearTimeout(timer)}$('#conn').textContent=err&&err.code==='revoked'?'Geen toegang meer tot de gedeelde opslag':'Verbinding met opslag verbroken; herlaad de pagina';if(!edit)render()});
+  });
+})();
+</script>
+</body>
+</html>
