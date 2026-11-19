@@ -1,0 +1,1821 @@
+{
+ "bron": "https://tint-achterhoek.nl/technologie/",
+ "opgehaald": "2026-11-19",
+ "technologieen": {
+  "tint-arm-ondersteunend-exoskelet": {
+   "naam": "Arm-ondersteunend exoskelet",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet",
+    "kval"
+   ],
+   "omschrijving": "Wanneer men de armen heft, worden veren (of rekbare materialen) op spanning gebracht. Dat zorgt ervoor dat het exoskelet lichamelijke ondersteuning geeft (meer specifiek de schouderspieren helpt) bij het werken boven borsthoogte.",
+   "leveranciers": "Skelex, Comau, Health2Work (HAPO)",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/arm-ondersteunend-exoskelet/\nLeveranciers: Skelex (https://www.skelex.com/), Comau (https://www.comau.com/en/competencies/wearable-robotics-exoskeletons/), Health2Work (HAPO) (https://www.health2work.nl/hapo-exoskelet-ms)\nVolwassenheid: Volwassen.\nVoordelen: Fysieke belasting van de armen te verlagen; Het uitstellen van lokale vermoeidheid en ongemak in de armen; Het werk aantrekkelijker te maken; Re-integratie van mensen te bevorderen; Re-integratie van mensen met schouderklachten te bevorderen, of schouderklachten te voorkomen.\nOnderbouwing: 39 stukadoors droegen 6 weken een arm-exoskelet: minder fysieke belasting van armen/schouders; 65% wil in toekomst gebruiken; geen effect op productiviteit/kwaliteit. (de Vries et al., 2023) 11 bouwvakkers bij plafondinstallaties: lagere schouderspieractiviteit, nauwelijks last ervaren. (Baltrusch et al., 2023)",
+   "tint": {
+    "slug": "arm-ondersteunend-exoskelet",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (armen/schouders)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Armen"
+    ],
+    "watIsHet": "Een arm-ondersteunend exoskelet bestaat uit verschillende harde en zachte materialen. Het wordt vastgemaakt aan het lichaam met verschillende banden.",
+    "watDoetHet": "Wanneer men de armen heft, worden veren (of rekbare materialen) op spanning gebracht. Dat zorgt ervoor dat het exoskelet lichamelijke ondersteuning geeft (meer specifiek de schouderspieren helpt) bij het werken boven borsthoogte.",
+    "geschiktWerk": "Deze technologie is geschikt voor diverse werkzaamheden waarbij boven borsthoogte wordt gewerkt. Dit werk zien we bij verschillende beroepen in uiteenlopende sectoren als bouw, logistiek, agro en zorg.",
+    "doelgroep": "De technologie is geschikt voor iedereen die blootgesteld wordt aan de werkzaamheden als bovengenoemd.",
+    "implementatie": "Het kost nauwelijks tijd om te leren werken met een exoskelet. Er wordt wel gevraagd van de gebruiker om iets op het lichaam te dragen, hetgeen als hinderlijk kan worden ervaren om verschillende redenen (gewicht, omvang, drukpunten, warmte).",
+    "contraIndicaties": "De technologie werkt alleen in situaties waar gebruikers regelmatig of langere periodes boven schouderhoogte werken; niet bruikbaar bij taken op heuphoogte (zoals sorteren).",
+    "onderbouwing": "39 stukadoors droegen 6 weken een arm-exoskelet: minder fysieke belasting van armen/schouders; 65% wil in toekomst gebruiken; geen effect op productiviteit/kwaliteit. (de Vries et al., 2023) 11 bouwvakkers bij plafondinstallaties: lagere schouderspieractiviteit, nauwelijks last ervaren. (Baltrusch et al., 2023)",
+    "praktijk": "Werk boven borst-/schouderhoogte in bouw, logistiek, agro en zorg.",
+    "voordelen": [
+     "Fysieke belasting van de armen te verlagen.",
+     "Het uitstellen van lokale vermoeidheid en ongemak in de armen.",
+     "Het werk aantrekkelijker te maken",
+     "Re-integratie van mensen te bevorderen",
+     "Re-integratie van mensen met schouderklachten te bevorderen, of schouderklachten te voorkomen."
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T18:57:04.803Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.652Z"
+  },
+  "tint-beamerprojectie-van-werkinstructies": {
+   "naam": "Beamerprojectie van werkinstructies",
+   "categorie": "Digitale werkinstructies",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "zelf",
+    "prod",
+    "kval"
+   ],
+   "omschrijving": "Maakt instructies zichtbaar voor één of meerdere medewerkers tegelijk en ondersteunt stapsgewijs werken met minder beroep op collega’s.",
+   "leveranciers": "Epson, BenQ",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/beamerprojectie-van-werkinstructies/\nLeveranciers: Epson (https://www.epson.eu), BenQ (https://www.benq.eu)\nVolwassenheid: Volwassen. Tijd om in te voeren: Kort, na opstelling en contentinvoer direct inzetbaar.\nVoordelen: Consistente uitvoering van stappen; Minder vragen aan collega’s; Groepsgewijze ondersteuning mogelijk.\nOnderbouwing: Visuele, stap-voor-stap projecties kunnen uitvoering ondersteunen en vragen aan collega’s reduceren, vergelijkbaar met andere visuele instructiesystemen.",
+   "tint": {
+    "slug": "beamerprojectie-van-werkinstructies",
+    "ondertitel": "Geven van stapsgewijze instructies",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Stress",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Werkinstructies worden via een beamer groot geprojecteerd in de werkruimte, zodat medewerkers de stappen duidelijk kunnen volgen zonder handheld apparaat.",
+    "watDoetHet": "Maakt instructies zichtbaar voor één of meerdere medewerkers tegelijk en ondersteunt stapsgewijs werken met minder beroep op collega’s.",
+    "geschiktWerk": "Taken met vaste volgorde/standaard werkinstructies op één werkplek of cel.",
+    "doelgroep": "Medewerkers die baat hebben bij visuele sturing en duidelijke, goed leesbare stap-voor-stap instructies.",
+    "implementatie": "Instructiestappen voorbereiden; beamer en projectie-opstelling plaatsen; goed contrast en zichtlijnen borgen.",
+    "contraIndicaties": "Minder geschikt bij sterk wisselende taken of wanneer projectie slecht zichtbaar is door licht/ruimte-indeling.",
+    "onderbouwing": "Visuele, stap-voor-stap projecties kunnen uitvoering ondersteunen en vragen aan collega’s reduceren, vergelijkbaar met andere visuele instructiesystemen.",
+    "praktijk": "Montage/assemblage, sorteren, kwaliteitschecks.",
+    "voordelen": [
+     "Consistente uitvoering van stappen",
+     "Minder vragen aan collega’s",
+     "Groepsgewijze ondersteuning mogelijk"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Kort, na opstelling en contentinvoer direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T18:57:42.742Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.657Z"
+  },
+  "tint-been-ondersteunend-exoskelet": {
+   "naam": "Been-ondersteunend exoskelet",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Vermindert belasting bij tillen, doorzakken of langdurig staan/knielen; ondersteunt extensie of stabiliteit.",
+   "leveranciers": "Laevo, Ottobock Bionic",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/been-ondersteunend-exoskelet/\nLeveranciers: Laevo (https://www.laevo-exoskeletons.com), Ottobock Bionic (https://www.ottobock.com)\nVolwassenheid: Volwassen.\nVoordelen: Lagere fysieke belasting in benen; Uitstel van lokale vermoeidheid; Betere volhoudbaarheid van taken.\nOnderbouwing: Studies rapporteren lagere spieractiviteit en ervaren belasting, afhankelijk van taaktype en pasvorm.",
+   "tint": {
+    "slug": "been-ondersteunend-exoskelet",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (benen)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Benen"
+    ],
+    "watIsHet": "Draagbaar exoskelet dat benen/knieën/heup ondersteunt via mechanische of veer-/demperconstructies.",
+    "watDoetHet": "Vermindert belasting bij tillen, doorzakken of langdurig staan/knielen; ondersteunt extensie of stabiliteit.",
+    "geschiktWerk": "Sectoren met veel knielend/stakend werk of tillen: bouw, montage, logistiek, onderhoud.",
+    "doelgroep": "Medewerkers met hoge beenbelasting of verminderde belastbaarheid in onderlichaam.",
+    "implementatie": "Passend maken per gebruiker; korte instructie; gewenning aan draagcomfort en bewegingsvrijheid.",
+    "contraIndicaties": "Niet geschikt waar veel lage, snelle of gedraaide bewegingen nodig zijn zonder ondersteuning.",
+    "onderbouwing": "Studies rapporteren lagere spieractiviteit en ervaren belasting, afhankelijk van taaktype en pasvorm.",
+    "praktijk": "Montage laag-bij-de-grond, hef- en draagwerk, onderhoud.",
+    "voordelen": [
+     "Lagere fysieke belasting in benen",
+     "Uitstel van lokale vermoeidheid",
+     "Betere volhoudbaarheid van taken"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T18:59:02.137Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.657Z"
+  },
+  "tint-begeleiding-planning-groenvoorziening-anchiano": {
+   "naam": "Begeleiding planning en werk in groenvoorziening - Anchiano",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet",
+    "welz"
+   ],
+   "omschrijving": "Geeft overzicht van taken, planning en ondersteuning voor medewerkers met begeleidingsbehoefte.",
+   "leveranciers": "Anchiano",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/begeleiding-planning-groenvoorziening-anchiano/\nLeveranciers: Anchiano (https://anchiano.nl)\nVolwassenheid: Volwassen.\nVoordelen: Structuur in werk bieden; Zelfstandigheid vergroten; Begeleidingslast verlagen.\nOnderbouwing: Digitale planningsondersteuning vergroot structuur en zelfstandigheid.",
+   "tint": {
+    "slug": "begeleiding-planning-groenvoorziening-anchiano",
+    "ondertitel": "Begeleiding bij werkplanning en uitvoering en reizen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Stress",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Digitale planningstool gekoppeld aan werkprocessen in groenvoorziening.",
+    "watDoetHet": "Geeft overzicht van taken, planning en ondersteuning voor medewerkers met begeleidingsbehoefte.",
+    "geschiktWerk": "Groenvoorziening en buitenwerk.",
+    "doelgroep": "Medewerkers met behoefte aan structuur en overzicht.",
+    "implementatie": "Inrichten van planning en taken; korte training gebruikers.",
+    "contraIndicaties": "Minder geschikt in flexibele of sterk wisselende werkprocessen.",
+    "onderbouwing": "Digitale planningsondersteuning vergroot structuur en zelfstandigheid.",
+    "praktijk": "Dagelijkse planning en begeleiding.",
+    "voordelen": [
+     "Structuur in werk bieden",
+     "Zelfstandigheid vergroten",
+     "Begeleidingslast verlagen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:22:16.517Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.657Z"
+  },
+  "tint-bewustzijn-lichamelijke-belastbaarheid-bewustbelast": {
+   "naam": "Bewustzijn lichamelijke belastbaarheid - BewustBelast",
+   "categorie": "Werkplek en ergonomie",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Geeft feedback over tilbelasting, houding en bewegingen.",
+   "leveranciers": "BewustBelast",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/bewustzijn-lichamelijke-belastbaarheid-bewustbelast/\nLeveranciers: BewustBelast (https://bewustbelast.nl)\nVolwassenheid: Opkomend.\nVoordelen: Voorkomen van fysieke overbelasting; Bewustwording houding en beweging; Preventie van verzuim.\nOnderbouwing: Monitoring van fysieke belasting helpt preventie van musculoskeletale klachten.",
+   "tint": {
+    "slug": "bewustzijn-lichamelijke-belastbaarheid-bewustbelast",
+    "ondertitel": "Bewaken van stress en belastbaarheidsgrenzen",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Armen",
+     "Benen",
+     "Handen",
+     "Nek",
+     "Rug"
+    ],
+    "watIsHet": "App en sensor die fysieke belasting meet en gebruikers attendeert op overschrijding van persoonlijke grenzen.",
+    "watDoetHet": "Geeft feedback over tilbelasting, houding en bewegingen.",
+    "geschiktWerk": "Fysiek zwaar werk, zorg, logistiek, bouw.",
+    "doelgroep": "Werknemers met risico op overbelasting of fysieke klachten.",
+    "implementatie": "Draagbare sensor koppelen; app installeren; uitleg interpretatie.",
+    "contraIndicaties": "Kan als belastend ervaren worden als feedback te frequent is.",
+    "onderbouwing": "Monitoring van fysieke belasting helpt preventie van musculoskeletale klachten.",
+    "praktijk": "Preventie rugklachten, inzet bij arbo-trajecten.",
+    "voordelen": [
+     "Voorkomen van fysieke overbelasting",
+     "Bewustwording houding en beweging",
+     "Preventie van verzuim"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:19:38.718Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.657Z"
+  },
+  "tint-cobot-collaborative-robot": {
+   "naam": "Cobot (collaborative robot)",
+   "categorie": "Robotica en automatisering",
+   "knelpunten": [
+    "fysiek",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "prod",
+    "welz",
+    "inzet",
+    "kval"
+   ],
+   "omschrijving": "Neemt specifieke handelingen binnen een taak over (positioneren, schroeven, lijmen); werkt veilig samen met een medewerker in dezelfde ruimte.",
+   "leveranciers": "Techman Robot, Universal Robots, Fanuc, Franka Emika",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/cobot-collaborative-robot/\nLeveranciers: Techman Robot (https://www.tm-robot.com/), Universal Robots (https://www.universal-robots.com/), Fanuc (https://www.fanuc.eu/), Franka Emika (https://www.franka.de/)\nVolwassenheid: Volwassen. Tijd om in te voeren: 2-4 weken.\nVoordelen: Moeilijk werk makkelijker uitvoeren; Fysiek zwaar/repetitief werk verlichten; Productiviteit en werkplezier verhogen.\nOnderbouwing: Literatuur over HRC (Human-Robot Collaboration) beschrijft belastingsverlaging, consistente kwaliteit en inzetbaarheid bij repeterende taken.",
+   "tint": {
+    "slug": "cobot-collaborative-robot",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (overname specifieke handelingen)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Armen",
+     "Cognitief",
+     "Handen"
+    ],
+    "watIsHet": "Relatief kleine robotarm met gereedschap (grijper/zuignap), vaak met rails, sensoren en camera.",
+    "watDoetHet": "Neemt specifieke handelingen binnen een taak over (positioneren, schroeven, lijmen); werkt veilig samen met een medewerker in dezelfde ruimte.",
+    "geschiktWerk": "Assemblage/stand-alone werkplek; repetitief, precies of fysiek zwaar werk; tillen, verplaatsen, schroeven, lijmen, sorteren, aanduwen.",
+    "doelgroep": "Wanneer taakinhoud te groot is of specifieke fysieke handelingen lastig zijn door lichamelijke belemmeringen.",
+    "implementatie": "Programmeren, installeren, tooling plaatsen, toevoer van onderdelen organiseren; inzet op één of meer werkplekken.",
+    "contraIndicaties": "Minder geschikt als mens-cobot taakverdeling niet logisch/splitsbaar is.",
+    "onderbouwing": "Literatuur over HRC (Human-Robot Collaboration) beschrijft belastingsverlaging, consistente kwaliteit en inzetbaarheid bij repeterende taken.",
+    "praktijk": "Assemblage, handling, pick-and-place, kwaliteitsstappen.",
+    "voordelen": [
+     "Moeilijk werk makkelijker uitvoeren",
+     "Fysiek zwaar/repetitief werk verlichten",
+     "Productiviteit en werkplezier verhogen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "2-4 weken",
+    "bijgewerktOpWebsite": "2025-08-28T18:58:42.153Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.657Z"
+  },
+  "tint-communicatie-via-beelden": {
+   "naam": "Communicatie via beelden",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet",
+    "welz"
+   ],
+   "omschrijving": "De technologie bevat een verzameling van beelden: een beeldenbank. De app opent met een digitaal krijtbord waarin bestaande thema’s kunnen worden verwijderd en kunnen worden toegevoegd. Onder deze thema’s kunnen beelden, zoals (zelfgemaakte) foto’s en afbeeldingen, worden geplaatst. Vervolgens kan dit beeld onder het thema worden gedeeld met een bericht erbij, zodat anderen dit kunnen lezen. De beeldenbank kan privé worden gehouden. De beelden kunnen gebruikt worden ter ondersteuning van het werk in gesprekken en om uitdrukking te geven aan bv iemands talenten, dromen en ervaringen. De beeldbank is daarom altijd in ontwikkeling, doordat iemand nieuwe beelden kan toevoegen en oude kan weghalen?",
+   "leveranciers": "Landelijk ondersteuningsteam, Ebb",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/Communicatie-via-beelden/\nLeveranciers: Landelijk ondersteuningsteam (https://www.samenvoordeklant.nl/tools/matchingtools/ebb), Ebb (https://ebb.works/)\nVolwassenheid: Volwassen.\nVoordelen: Het beginnen en voortzetten van een gesprek te ondersteunen; Het zelfvertrouwen en het nemen van initiatief te bevorderen; Het bijdragen aan meer gelijkwaardigheid in een gesprek; Het geven van meer kennis over wie iemand is en wat iemand wilt; Meer zelfregie (zelf keuzes maken op basis van (zelf)reflectie).",
+   "tint": {
+    "slug": "Communicatie-via-beelden",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Begeleiding",
+     "Lezen",
+     "Omgang",
+     "Spreken",
+     "Zelfstandig"
+    ],
+    "watIsHet": "De technologie betreft een app.",
+    "watDoetHet": "De technologie bevat een verzameling van beelden: een beeldenbank. De app opent met een digitaal krijtbord waarin bestaande thema’s kunnen worden verwijderd en kunnen worden toegevoegd. Onder deze thema’s kunnen beelden, zoals (zelfgemaakte) foto’s en afbeeldingen, worden geplaatst. Vervolgens kan dit beeld onder het thema worden gedeeld met een bericht erbij, zodat anderen dit kunnen lezen. De beeldenbank kan privé worden gehouden. De beelden kunnen gebruikt worden ter ondersteuning van het werk in gesprekken en om uitdrukking te geven aan bv iemands talenten, dromen en ervaringen. De beeldbank is daarom altijd in ontwikkeling, doordat iemand nieuwe beelden kan toevoegen en oude kan weghalen?",
+    "geschiktWerk": "De technologie kan ingezet worden in diverse werkomgevingen en sectoren.",
+    "doelgroep": "De technologie is geschikt voor mensen die moeite hebben met lezen en schrijven en zich verbaal uit te drukken. De technologie is door de mogelijkheid om te plannen en doelen te stellen ook geschikt voor mensen met belemmeringen van het geheugen en houden van overzicht.",
+    "implementatie": "",
+    "contraIndicaties": "De technologie is niet geschikt wanneer: Mobiele apparaten (smartphone, tablet) tijdens het werk niet zijn toegestaan; Er geen (goede) internetverbinding aanwezig is.",
+    "onderbouwing": "",
+    "praktijk": "",
+    "voordelen": [
+     "Het beginnen en voortzetten van een gesprek te ondersteunen.",
+     "Het zelfvertrouwen en het nemen van initiatief te bevorderen.",
+     "Het bijdragen aan meer gelijkwaardigheid in een gesprek.",
+     "Het geven van meer kennis over wie iemand is en wat iemand wilt.",
+     "Meer zelfregie (zelf keuzes maken op basis van (zelf)reflectie)."
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:30:03.637Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-digitale-gesprekspartner-ai-avatar": {
+   "naam": "Digitale gesprekspartner (AI-avatar)",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Medewerkers oefenen met de avatar gesprekken die ze spannend vinden, zoals een functioneringsgesprek, een klantgesprek of een presentatie. Ook kun je ermee een nieuwe taal oefenen, of je verhaal kwijt als je stress of negatieve gevoelens wilt ordenen. De avatar is altijd beschikbaar en spreekt vaak meerdere talen.",
+   "leveranciers": "",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/digitale-gesprekspartner-ai-avatar/\nVolwassenheid: Opkomend.\nVoordelen: Op elk moment oefenen, zonder oordeel; Meer zelfvertrouwen in gesprekken; Oefenen in de eigen taal of een nieuwe taal.",
+   "tint": {
+    "slug": "digitale-gesprekspartner-ai-avatar",
+    "ondertitel": "Gesprekken oefenen en een luisterend oor",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Omgang",
+     "Spreken",
+     "Stress"
+    ],
+    "watIsHet": "Een avatar is een digitaal mens op een scherm of in een VR-bril, aangestuurd door kunstmatige intelligentie. De avatar luistert, reageert op wat iemand zegt en voert zo een echt gesprek.",
+    "watDoetHet": "Medewerkers oefenen met de avatar gesprekken die ze spannend vinden, zoals een functioneringsgesprek, een klantgesprek of een presentatie. Ook kun je ermee een nieuwe taal oefenen, of je verhaal kwijt als je stress of negatieve gevoelens wilt ordenen. De avatar is altijd beschikbaar en spreekt vaak meerdere talen.",
+    "geschiktWerk": "Functies met veel contact met klanten of collega's, en werk waarvoor iemand een nieuwe taal of nieuwe gespreksvaardigheden moet leren.",
+    "doelgroep": "Medewerkers die sociale interactie spannend of lastig vinden, anderstalige medewerkers, en medewerkers met een psychosociale ondersteuningsvraag die laagdrempelig willen oefenen.",
+    "implementatie": "Een laptop, tablet of VR-bril met avatarsoftware, en afspraken over welke gesprekken je wilt oefenen. Kijk goed waar de gesprekken worden opgeslagen en wie ze kan inzien.",
+    "contraIndicaties": "Een avatar vervangt geen begeleider of hulpverlener: bij serieuze psychische klachten is menselijke hulp nodig. Hoe goed de antwoorden zijn, hangt af van de gebruikte AI.",
+    "onderbouwing": "",
+    "praktijk": "Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/avatar/",
+    "voordelen": [
+     "Op elk moment oefenen, zonder oordeel",
+     "Meer zelfvertrouwen in gesprekken",
+     "Oefenen in de eigen taal of een nieuwe taal"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.324Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-digitale-ondersteuning-leren-basisvaardigheden": {
+   "naam": "Digitale ondersteuning bij leren basisvaardigheden (WERK-portal, Oefenen.nl, Steffie)",
+   "categorie": "Toeleiding naar werk",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf"
+   ],
+   "omschrijving": "Biedt laagdrempelige training en herhalingsoefeningen.",
+   "leveranciers": "WERK-portal, Oefenen.nl, Steffie",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/digitale-ondersteuning-leren-basisvaardigheden/\nLeveranciers: WERK-portal (https://www.werk-portal.nl), Oefenen.nl (https://www.oefenen.nl), Steffie (https://www.steffie.nl)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Verbeterde taal- en rekenvaardigheden; Digitale vaardigheden versterken; Vergrote kansen op werk.\nOnderbouwing: Digitale leertools vergroten basisvaardigheden en werkparticipatie.",
+   "tint": {
+    "slug": "digitale-ondersteuning-leren-basisvaardigheden",
+    "ondertitel": "Leren basisvaardigheden",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Lezen",
+     "Spreken",
+     "Stress",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Online platforms met oefeningen en modules om basisvaardigheden (taal, rekenen, digitale vaardigheden) te ontwikkelen.",
+    "watDoetHet": "Biedt laagdrempelige training en herhalingsoefeningen.",
+    "geschiktWerk": "Voorbereiding op werk, persoonlijke ontwikkeling.",
+    "doelgroep": "Mensen met beperkte basisvaardigheden of nieuw in arbeidsproces.",
+    "implementatie": "Registreren op platform; zelfstandig of begeleid oefenen.",
+    "contraIndicaties": "Niet geschikt zonder digitale basisvaardigheid.",
+    "onderbouwing": "Digitale leertools vergroten basisvaardigheden en werkparticipatie.",
+    "praktijk": "Voorbereiding werk en opleiding.",
+    "voordelen": [
+     "Verbeterde taal- en rekenvaardigheden",
+     "Digitale vaardigheden versterken",
+     "Vergrote kansen op werk"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:24:48.500Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-emoties-en-planning-sociale-robot": {
+   "naam": "Emoties en planning (sociale robot)",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz",
+    "zelf"
+   ],
+   "omschrijving": "De robot merkt op hoe iemand zich voelt en helpt om rustig te worden voordat spanning oploopt. Medewerkers oefenen er veilig sociale interactie mee, bijvoorbeeld als voorbereiding op een lastig gesprek. Ook geeft de robot herinneringen aan afspraken en deadlines, en kun je er spraakmemo's mee opnemen en terugluisteren.",
+   "leveranciers": "",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/emoties-en-planning-sociale-robot/\nVolwassenheid: Opkomend.\nVoordelen: Minder stress en frustratie op het werk; Veilig oefenen met sociale interactie; Herinneringen voor afspraken en taken.",
+   "tint": {
+    "slug": "emoties-en-planning-sociale-robot",
+    "ondertitel": "Robot die helpt bij spanning, contact en de dagplanning",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Omgang",
+     "Stress"
+    ],
+    "watIsHet": "Een sociale robot is een kleine robot met camera, microfoon en sensoren die spraak, gezichten en emoties herkent. Met kunstmatige intelligentie reageert de robot op wat iemand zegt of doet en voert hij een eenvoudig gesprek.",
+    "watDoetHet": "De robot merkt op hoe iemand zich voelt en helpt om rustig te worden voordat spanning oploopt. Medewerkers oefenen er veilig sociale interactie mee, bijvoorbeeld als voorbereiding op een lastig gesprek. Ook geeft de robot herinneringen aan afspraken en deadlines, en kun je er spraakmemo's mee opnemen en terugluisteren.",
+    "geschiktWerk": "Werkplekken waar medewerkers baat hebben bij een vaste structuur, zoals productie, inpakwerk en administratief werk met een vaste dagplanning.",
+    "doelgroep": "Medewerkers met een psychosociale ondersteuningsvraag, bijvoorbeeld door autisme, angst of stress, en medewerkers die moeite hebben met plannen en onthouden.",
+    "implementatie": "Een robot op of bij de werkplek, wifi, en tijd om herinneringen en routines samen met de medewerker in te stellen. Een begeleider of jobcoach helpt in de eerste weken.",
+    "contraIndicaties": "Niet iedereen voelt zich prettig bij een robot die emoties registreert: bespreek dit vooraf en maak afspraken over camera- en geluidsopnames. De robot vervangt geen begeleider.",
+    "onderbouwing": "",
+    "praktijk": "Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/sociale-robot/",
+    "voordelen": [
+     "Minder stress en frustratie op het werk",
+     "Veilig oefenen met sociale interactie",
+     "Herinneringen voor afspraken en taken"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.374Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-hand-exoskelet": {
+   "naam": "Hand-exoskelet",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf",
+    "welz"
+   ],
+   "omschrijving": "Vergroot grijpkracht en ondersteunt handbewegingen bij mensen met verminderde handfunctie, bv. na letsel of neurologische aandoening.",
+   "leveranciers": "HandyRehab, ExoGlove Poly",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/hand-exoskelet/\nLeveranciers: HandyRehab (https://www.handrehab.com), ExoGlove Poly (https://www.srbiomech.com)\nVolwassenheid: Opkomend.\nVoordelen: Herstel of versterking grijpfunctie; Vergroot zelfstandigheid bij taken; Ondersteunt re-integratie bij handproblemen.\nOnderbouwing: Onderzoek naar revalidatie-exoskeletten toont verbeteringen in grijpkracht en dagelijkse handfunctie bij mensen met beperkte handmobiliteit.",
+   "tint": {
+    "slug": "hand-exoskelet",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (handfunctie)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Handen"
+    ],
+    "watIsHet": "Draagbaar exoskelet dat vingers en hand ondersteunt bij grijpen of loslaten via kleine motoren of mechanische ondersteuning.",
+    "watDoetHet": "Vergroot grijpkracht en ondersteunt handbewegingen bij mensen met verminderde handfunctie, bv. na letsel of neurologische aandoening.",
+    "geschiktWerk": "Werkzaamheden waarbij fijne motoriek of grip nodig is, zoals assemblage, verzorging, lichte montage.",
+    "doelgroep": "Mensen met verminderde handfunctie die ondersteuning nodig hebben bij grijpen, tillen of vasthouden.",
+    "implementatie": "Exoskelet wordt aangepast aan de hand; korte instructie nodig voor gebruik; opladen/onderhoud van elektronica vereist.",
+    "contraIndicaties": "Niet geschikt bij ernstige spasticiteit of pijnklachten die beweging verhinderen.",
+    "onderbouwing": "Onderzoek naar revalidatie-exoskeletten toont verbeteringen in grijpkracht en dagelijkse handfunctie bij mensen met beperkte handmobiliteit.",
+    "praktijk": "Assemblage, verzorging, lichte montage.",
+    "voordelen": [
+     "Herstel of versterking grijpfunctie",
+     "Vergroot zelfstandigheid bij taken",
+     "Ondersteunt re-integratie bij handproblemen"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T18:59:42.608Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-handsfree-bediening-tablet-smartphone": {
+   "naam": "Handsfree bediening van tablet of smartphone",
+   "categorie": "Werkplek en ergonomie",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf"
+   ],
+   "omschrijving": "Geeft toegang tot tablet/smartphone functies voor mensen die hun handen niet (volledig) kunnen gebruiken.",
+   "leveranciers": "Voice Access (Google), Apple Voice Control",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/handsfree-bediening-tablet-smartphone/\nLeveranciers: Voice Access (Google) (https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.voiceaccess), Apple Voice Control (https://support.apple.com/guide/iphone/use-voice-control-iphab1c3f6a/ios)\nVolwassenheid: Volwassen.\nVoordelen: Digitale zelfstandigheid vergroten; Toegankelijkheid van apps en software verbeteren; Meer participatie in digitaal werk.\nOnderbouwing: Handsfree bediening met spraak- en oogbesturing wordt breed toegepast en ondersteunt digitale participatie voor mensen met motorische beperkingen.",
+   "tint": {
+    "slug": "handsfree-bediening-tablet-smartphone",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (handsfree interactie)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Handen"
+    ],
+    "watIsHet": "Handsfree bediening via stem, hoofdbeweging of oogbesturing maakt gebruik van sensoren en software om mobiele apparaten zonder handen te bedienen.",
+    "watDoetHet": "Geeft toegang tot tablet/smartphone functies voor mensen die hun handen niet (volledig) kunnen gebruiken.",
+    "geschiktWerk": "Digitale taken op kantoor, administratie, communicatie en informatie zoeken.",
+    "doelgroep": "Mensen met motorische beperkingen waardoor handgebruik moeilijk of onmogelijk is.",
+    "implementatie": "Configureren van apps/software; korte training gewenst; koppelen aan device en besturingssysteem.",
+    "contraIndicaties": "Niet geschikt in lawaaiige omgevingen bij spraakbesturing of bij beperkte hoofd-/oogcontrole.",
+    "onderbouwing": "Handsfree bediening met spraak- en oogbesturing wordt breed toegepast en ondersteunt digitale participatie voor mensen met motorische beperkingen.",
+    "praktijk": "Handsfree computerwerk, digitale communicatie, mobiel werken.",
+    "voordelen": [
+     "Digitale zelfstandigheid vergroten",
+     "Toegankelijkheid van apps en software verbeteren",
+     "Meer participatie in digitaal werk"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T18:59:57.724Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-hulp-bij-reizen-met-ov-goov": {
+   "naam": "Hulp bij reizen met OV - GoOV",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Ondersteunt zelfstandig reizen door realtime navigatie en begeleiding.",
+   "leveranciers": "GoOV",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/hulp-bij-reizen-met-ov-goov/\nLeveranciers: GoOV (https://www.go-ov.nl)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Zelfstandig reizen mogelijk maken; Participatie vergroten; Begeleidingslast verminderen.\nOnderbouwing: Digitale OV-begeleiding vergroot zelfstandigheid van mensen met beperkingen.",
+   "tint": {
+    "slug": "hulp-bij-reizen-met-ov-goov",
+    "ondertitel": "Begeleiding bij werkplanning en uitvoering en reizen",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Zelfstandig"
+    ],
+    "watIsHet": "App die reisinformatie en begeleiding biedt tijdens reizen met openbaar vervoer.",
+    "watDoetHet": "Ondersteunt zelfstandig reizen door realtime navigatie en begeleiding.",
+    "geschiktWerk": "Forensen, buitendienst, afspraken.",
+    "doelgroep": "Mensen die moeite hebben met zelfstandig reizen.",
+    "implementatie": "Downloaden app; koppeling met reisinformatie; korte instructie.",
+    "contraIndicaties": "Niet geschikt zonder smartphone of bij ernstige cognitieve beperkingen.",
+    "onderbouwing": "Digitale OV-begeleiding vergroot zelfstandigheid van mensen met beperkingen.",
+    "praktijk": "Dagelijkse woon-werkreizen.",
+    "voordelen": [
+     "Zelfstandig reizen mogelijk maken",
+     "Participatie vergroten",
+     "Begeleidingslast verminderen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:22:45.821Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-hulp-bij-spreken-spraak-naar-tekst-talkie": {
+   "naam": "Hulp bij spreken of spraak naar tekst - Talkie",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf",
+    "welz"
+   ],
+   "omschrijving": "Biedt alternatieve communicatievormen voor mensen met spraakbeperkingen.",
+   "leveranciers": "Talkie",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/hulp-bij-spreken-spraak-naar-tekst-talkie/\nLeveranciers: Talkie (https://www.talkieapp.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Kort.\nVoordelen: Toegankelijke communicatie; Zelfstandigheid vergroten; Participatie op de werkvloer.\nOnderbouwing: Onderzoek naar augmentatieve communicatie bevestigt de waarde van apps voor inclusie en zelfstandigheid.",
+   "tint": {
+    "slug": "hulp-bij-spreken-spraak-naar-tekst-talkie",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Omgang",
+     "Spreken"
+    ],
+    "watIsHet": "Communicatie-app die spraak omzet naar tekst en pictogrammen, en tekst naar spraak uitspreekt.",
+    "watDoetHet": "Biedt alternatieve communicatievormen voor mensen met spraakbeperkingen.",
+    "geschiktWerk": "Dagelijkse communicatie, werkoverleg, klantcontact.",
+    "doelgroep": "Mensen met spraakproblemen of communicatiebeperkingen.",
+    "implementatie": "Installeren app; instellen vocabulaire en pictogrammen.",
+    "contraIndicaties": "Minder geschikt bij complexe conversaties zonder voorbereiding.",
+    "onderbouwing": "Onderzoek naar augmentatieve communicatie bevestigt de waarde van apps voor inclusie en zelfstandigheid.",
+    "praktijk": "Werkvloer, klantenservice, zorg en onderwijs.",
+    "voordelen": [
+     "Toegankelijke communicatie",
+     "Zelfstandigheid vergroten",
+     "Participatie op de werkvloer"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Kort",
+    "bijgewerktOpWebsite": "2025-08-28T18:47:34.552Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-hulpmiddelen-op-maat-3d-printer": {
+   "naam": "Hulpmiddelen op maat (3D-printer)",
+   "categorie": "Werkplek en ergonomie",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf",
+    "prod"
+   ],
+   "omschrijving": "Je print in korte tijd een hulpmiddel dat een handeling makkelijker of mogelijk maakt: een houder voor telefoon, pen, sleutel of gereedschap, een schrijf- of tekenmal, een draagbare drempelhulp voor een rolstoel of een duidelijk informatiebord. Past het niet goed, dan pas je het ontwerp aan en print je opnieuw.",
+   "leveranciers": "UltiMaker, Prusa Research",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/hulpmiddelen-op-maat-3d-printer/\nLeveranciers: UltiMaker (https://ultimaker.com), Prusa Research (https://www.prusa3d.com)\nVolwassenheid: Volwassen.\nVoordelen: Hulpmiddel op maat voor één medewerker; Snel aan te passen als het niet goed past; Lage kosten per hulpmiddel.",
+   "tint": {
+    "slug": "hulpmiddelen-op-maat-3d-printer",
+    "ondertitel": "Zelf houders, mallen en hulpstukken printen",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Armen",
+     "Handen"
+    ],
+    "watIsHet": "Een 3D-printer bouwt een voorwerp laag voor laag op uit kunststof, op basis van een digitaal ontwerp. Op de werkvloer maak je er kleine hulpmiddelen mee die precies passen bij een medewerker en een taak.",
+    "watDoetHet": "Je print in korte tijd een hulpmiddel dat een handeling makkelijker of mogelijk maakt: een houder voor telefoon, pen, sleutel of gereedschap, een schrijf- of tekenmal, een draagbare drempelhulp voor een rolstoel of een duidelijk informatiebord. Past het niet goed, dan pas je het ontwerp aan en print je opnieuw.",
+    "geschiktWerk": "Productie, assemblage en inpakwerk, onderhoud en technische dienst, en leerwerkplekken. Overal waar een kleine aanpassing aan gereedschap of werkplek het verschil maakt.",
+    "doelgroep": "Medewerkers met weinig kracht of grip in de handen, met een fysieke beperking of in een rolstoel. Ook medewerkers met een verstandelijke beperking, voor wie een mal of houder een taak overzichtelijker maakt. In leerwerktrajecten is het printen zelf een nuttige vaardigheid.",
+    "implementatie": "Een 3D-printer, filament (meestal PLA: goedkoop en makkelijk te verwerken) en iemand die ontwerpen kan zoeken of maken. Veel ontwerpen voor hulpmiddelen staan gratis online. Reken op wat oefentijd om de printer goed in te stellen.",
+    "contraIndicaties": "Niet geschikt voor hulpmiddelen die zwaar belast worden of medisch gecertificeerd moeten zijn. Geprinte kunststof onderdelen kunnen slijten of breken; controleer ze regelmatig.",
+    "onderbouwing": "",
+    "praktijk": "Bij Lucrato ontwerpen en printen medewerkers zelf hulpstukken voor hun werk. Sociaal ontwikkelbedrijf DCW in Enschede print hulpmiddelen voor de eigen medewerkers. Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/3d-printer/",
+    "voordelen": [
+     "Hulpmiddel op maat voor één medewerker",
+     "Snel aan te passen als het niet goed past",
+     "Lage kosten per hulpmiddel"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.256Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.658Z"
+  },
+  "tint-kwaliteiten-in-kaart-brengen-game-based-assessment": {
+   "naam": "Kwaliteiten in kaart brengen: Game-based assessment",
+   "categorie": "Toeleiding naar werk",
+   "knelpunten": [
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "inzet"
+   ],
+   "omschrijving": "Geeft inzicht in competenties en talenten; ondersteunt matching met functies.",
+   "leveranciers": "Harver, Equalture",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/kwaliteiten-in-kaart-brengen-game-based-assessment/\nLeveranciers: Harver (https://harver.com), Equalture (https://equalture.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Kort.\nVoordelen: Inzicht in kwaliteiten; Betere matching met functies; Verhoogde motivatie.\nOnderbouwing: Game-based assessments zijn gevalideerde methoden om gedrag en kwaliteiten te meten.",
+   "tint": {
+    "slug": "kwaliteiten-in-kaart-brengen-game-based-assessment",
+    "ondertitel": "Hulp bij toeleiding naar werk",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Skills"
+    ],
+    "watIsHet": "Digitale spellen die gedrag en vaardigheden meten en rapporteren.",
+    "watDoetHet": "Geeft inzicht in competenties en talenten; ondersteunt matching met functies.",
+    "geschiktWerk": "Arbeidsbemiddeling, selectie, oriëntatie.",
+    "doelgroep": "Werkzoekenden en werknemers die inzicht willen in hun kwaliteiten.",
+    "implementatie": "Toegang tot platform; spel spelen; resultaten analyseren.",
+    "contraIndicaties": "Kan stressvol zijn voor mensen die niet van gamen houden.",
+    "onderbouwing": "Game-based assessments zijn gevalideerde methoden om gedrag en kwaliteiten te meten.",
+    "praktijk": "Loopbaanbegeleiding, selectie, matching.",
+    "voordelen": [
+     "Inzicht in kwaliteiten",
+     "Betere matching met functies",
+     "Verhoogde motivatie"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Kort",
+    "bijgewerktOpWebsite": "2025-08-28T19:28:11.195Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-loopbaanorientatie-virtual-reality": {
+   "naam": "Loopbaanoriëntatie: Virtual Reality",
+   "categorie": "Toeleiding naar werk",
+   "knelpunten": [
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "inzet"
+   ],
+   "omschrijving": "Biedt ervaring met verschillende functies om betere loopbaankeuze te maken.",
+   "leveranciers": "Virtual Lab",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/loopbaanorientatie-virtual-reality/\nLeveranciers: Virtual Lab (https://www.virtuallab.com)\nVolwassenheid: Opkomend.\nVoordelen: Betere loopbaankeuzes; Realistische ervaring met beroepen; Meer motivatie voor opleiding.\nOnderbouwing: VR-oriëntatie ondersteunt beroepskeuze en motivatie bij werkzoekenden.",
+   "tint": {
+    "slug": "loopbaanorientatie-virtual-reality",
+    "ondertitel": "Hulp bij toeleiding naar werk",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Skills"
+    ],
+    "watIsHet": "VR-omgevingen waarin verschillende beroepen en werksituaties kunnen worden verkend.",
+    "watDoetHet": "Biedt ervaring met verschillende functies om betere loopbaankeuze te maken.",
+    "geschiktWerk": "Oriëntatie in diverse sectoren.",
+    "doelgroep": "Mensen die werk zoeken en nog geen keuze hebben gemaakt.",
+    "implementatie": "Opzetten VR-omgeving; scenario’s selecteren.",
+    "contraIndicaties": "Niet geschikt bij sterke cybersickness.",
+    "onderbouwing": "VR-oriëntatie ondersteunt beroepskeuze en motivatie bij werkzoekenden.",
+    "praktijk": "Arbeidsoriëntatie en beroepskeuze.",
+    "voordelen": [
+     "Betere loopbaankeuzes",
+     "Realistische ervaring met beroepen",
+     "Meer motivatie voor opleiding"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:29:16.426Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-ondersteuning-bij-spasticiteit-mollii-suit": {
+   "naam": "Ondersteuning bij spasticiteit (Mollii Suit)",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "welz"
+   ],
+   "omschrijving": "Helpt spasticiteit verminderen en bewegingsvrijheid vergroten; ontspant spieren en kan mobiliteit verbeteren.",
+   "leveranciers": "Inerventions AB",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/ondersteuning-bij-spasticiteit-mollii-suit/\nLeveranciers: Inerventions AB (https://www.mollii.com)\nVolwassenheid: Volwassen.\nVoordelen: Spasticiteit verminderen; Meer bewegingsvrijheid; Verhoogde deelname aan werk.\nOnderbouwing: Klinische studies tonen vermindering van spierspanning en verbeterde mobiliteit bij mensen met neurologische aandoeningen.",
+   "tint": {
+    "slug": "ondersteuning-bij-spasticiteit-mollii-suit",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (spasticiteitsreductie)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Armen",
+     "Benen",
+     "Rug"
+    ],
+    "watIsHet": "Pak met ingebouwde elektrodes dat lichte elektrische stimulatie geeft om spierspanning te reguleren.",
+    "watDoetHet": "Helpt spasticiteit verminderen en bewegingsvrijheid vergroten; ontspant spieren en kan mobiliteit verbeteren.",
+    "geschiktWerk": "In te zetten in sectoren/werkzaamheden waar spasticiteit het functioneren belemmert.",
+    "doelgroep": "Mensen met spasticiteit door bijvoorbeeld CP, MS of beroerte.",
+    "implementatie": "Pak aanmeten, configureren stimulatieprogramma’s; instructie nodig van behandelaar of begeleider.",
+    "contraIndicaties": "Niet gebruiken bij contra-indicaties voor elektrische stimulatie (bv. pacemaker).",
+    "onderbouwing": "Klinische studies tonen vermindering van spierspanning en verbeterde mobiliteit bij mensen met neurologische aandoeningen.",
+    "praktijk": "Dagelijks gebruik op werkvloer voor minder spierspanning.",
+    "voordelen": [
+     "Spasticiteit verminderen",
+     "Meer bewegingsvrijheid",
+     "Verhoogde deelname aan werk"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:00:23.969Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-ontspannen-virtual-reality-vrelax": {
+   "naam": "Ontspannen in virtual reality (VRelax)",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz"
+   ],
+   "omschrijving": "Een paar minuten in de virtuele omgeving geeft een rustmoment midden op de werkdag. De oefeningen leren je hoe je spanning zelf kunt verminderen, ook zonder VR-bril. Na afloop kunnen medewerkers zich vaak beter concentreren.",
+   "leveranciers": "VRelax",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/ontspannen-virtual-reality-vrelax/\nLeveranciers: VRelax (https://vrelax.com)\nVolwassenheid: Volwassen.\nVoordelen: Minder stress op het werk; Betere concentratie na een rustmoment; Ontspanningsoefeningen die ook buiten VR werken.",
+   "tint": {
+    "slug": "ontspannen-virtual-reality-vrelax",
+    "ondertitel": "Een rustmoment in een virtuele natuuromgeving",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Stress"
+    ],
+    "watIsHet": "VRelax is een VR-app met rustige natuuromgevingen, zoals een strand of een bos. Met een VR-bril op doet de medewerker korte oefeningen die helpen om te ontspannen.",
+    "watDoetHet": "Een paar minuten in de virtuele omgeving geeft een rustmoment midden op de werkdag. De oefeningen leren je hoe je spanning zelf kunt verminderen, ook zonder VR-bril. Na afloop kunnen medewerkers zich vaak beter concentreren.",
+    "geschiktWerk": "Werk met veel prikkels of een hoge werkdruk, zoals productie, klantcontact en zorg. Voor het rustmoment is een stille ruimte nodig.",
+    "doelgroep": "Medewerkers met stress, spanningsklachten of een verhoogd risico op burn-out, en medewerkers met een psychische kwetsbaarheid. Werkcoaches zetten het ook in tijdens begeleidingstrajecten.",
+    "implementatie": "Een VR-bril met de VRelax-app (abonnement) en een rustige plek. Spreek af wanneer medewerkers de bril kunnen gebruiken.",
+    "contraIndicaties": "Niet geschikt voor mensen die snel misselijk worden van VR of bij epilepsie. Het vervangt geen behandeling bij ernstige psychische klachten.",
+    "onderbouwing": "",
+    "praktijk": "Bij Werkkracht gebruiken medewerkers VRelax om tot rust te komen en te werken aan hun mentale gezondheid. Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/vrelax/",
+    "voordelen": [
+     "Minder stress op het werk",
+     "Betere concentratie na een rustmoment",
+     "Ontspanningsoefeningen die ook buiten VR werken"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.535Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-romp-ondersteunend-exoskelet": {
+   "naam": "Romp-ondersteunend exoskelet",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet",
+    "kval"
+   ],
+   "omschrijving": "Vermindert rugbelasting bij buigen/tillen; kan houdingsondersteuning geven bij langere statische taken.",
+   "leveranciers": "HeroWear, Auxivo",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/romp-ondersteunend-exoskelet/\nLeveranciers: HeroWear (https://herowearexo.com), Auxivo (https://www.auxivo.com)\nVolwassenheid: Volwassen.\nVoordelen: Verminderde rugbelasting bij tillen/buigen; Minder vermoeidheid in onderrug; Verhoogde volhoudbaarheid van fysieke taken.\nOnderbouwing: Onderzoeken tonen lagere rugspieractiviteit en ervaren belasting bij passende taken; effect is taak- en gebruiker-afhankelijk.",
+   "tint": {
+    "slug": "romp-ondersteunend-exoskelet",
+    "ondertitel": "Bieden van lichamelijke ondersteuning (romp/rug)",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Rug"
+    ],
+    "watIsHet": "Exoskelet dat romp/rug ondersteunt via verende of mechanische elementen en krachtoverdracht naar heupen/bovenlichaam.",
+    "watDoetHet": "Vermindert rugbelasting bij buigen/tillen; kan houdingsondersteuning geven bij langere statische taken.",
+    "geschiktWerk": "Til- en buigtaken, logistiek, zorg, montage; repetitieve bewegingen met rugbelasting.",
+    "doelgroep": "Medewerkers met hoge rugbelasting of terugkerende rugklachten in werkcontext.",
+    "implementatie": "Aanpassen op lichaam; korte instructie; draagcomfort/drukpunten testen in echte taak.",
+    "contraIndicaties": "Niet geschikt bij taken met veel onverwachte wendingen of waar het frame bewegingsvrijheid hindert.",
+    "onderbouwing": "Onderzoeken tonen lagere rugspieractiviteit en ervaren belasting bij passende taken; effect is taak- en gebruiker-afhankelijk.",
+    "praktijk": "Orderpicken, zorghandelingen, montage met veel bukken/tillen.",
+    "voordelen": [
+     "Verminderde rugbelasting bij tillen/buigen",
+     "Minder vermoeidheid in onderrug",
+     "Verhoogde volhoudbaarheid van fysieke taken"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T18:59:21.579Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-sollicitatietraining-virtual-reality": {
+   "naam": "Sollicitatietraining: Virtual Reality",
+   "categorie": "Toeleiding naar werk",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "inzet"
+   ],
+   "omschrijving": "Biedt veilige oefenomgeving voor interviewvaardigheden.",
+   "leveranciers": "VR Training Labs",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/sollicitatietraining-virtual-reality/\nLeveranciers: VR Training Labs (https://www.vrtraininglabs.com)\nVolwassenheid: Opkomend.\nVoordelen: Zelfvertrouwen vergroten; Verbeterde interviewvaardigheden; Meer kans op baan.\nOnderbouwing: VR-training vergroot interviewvaardigheden en zelfvertrouwen bij werkzoekenden.",
+   "tint": {
+    "slug": "sollicitatietraining-virtual-reality",
+    "ondertitel": "Hulp bij toeleiding naar werk",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Skills"
+    ],
+    "watIsHet": "VR-simulaties waarin sollicitatiegesprekken geoefend kunnen worden.",
+    "watDoetHet": "Biedt veilige oefenomgeving voor interviewvaardigheden.",
+    "geschiktWerk": "Voorbereiding op sollicitatie.",
+    "doelgroep": "Mensen met weinig ervaring of onzekerheid bij sollicitaties.",
+    "implementatie": "Scenario’s selecteren en oefenen; feedback geven.",
+    "contraIndicaties": "Niet geschikt bij cybersickness.",
+    "onderbouwing": "VR-training vergroot interviewvaardigheden en zelfvertrouwen bij werkzoekenden.",
+    "praktijk": "Arbeidsbemiddeling, sollicitatietraining.",
+    "voordelen": [
+     "Zelfvertrouwen vergroten",
+     "Verbeterde interviewvaardigheden",
+     "Meer kans op baan"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:28:30.212Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-spraak-naar-tekst-telefoongesprekken-rogervoice": {
+   "naam": "Spraak naar tekst (telefoongesprekken) - RogerVoice",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf"
+   ],
+   "omschrijving": "Geeft slechthorende en dove gebruikers toegang tot telefonische communicatie via tekst.",
+   "leveranciers": "RogerVoice",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/spraak-naar-tekst-telefoongesprekken-rogervoice/\nLeveranciers: RogerVoice (https://rogervoice.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Enkele minuten (download en installatie).\nVoordelen: Telefonische communicatie toegankelijk; Zelfstandigheid vergroten; Participatie op de werkvloer verbeteren.\nOnderbouwing: Automatische spraakherkenning kan telefoongesprekken toegankelijk maken en zelfstandigheid vergroten voor slechthorende gebruikers.",
+   "tint": {
+    "slug": "spraak-naar-tekst-telefoongesprekken-rogervoice",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Cognitief",
+     "Horen"
+    ],
+    "watIsHet": "Mobiele app die inkomende en uitgaande telefoongesprekken live omzet naar ondertiteling op het scherm.",
+    "watDoetHet": "Geeft slechthorende en dove gebruikers toegang tot telefonische communicatie via tekst.",
+    "geschiktWerk": "Telefonische klantenservice, afspraken maken, contact met collega’s.",
+    "doelgroep": "Mensen met gehoorverlies die telefonie willen gebruiken.",
+    "implementatie": "Installatie app; koppelen aan telefoonnummer; korte uitleg voor gebruik.",
+    "contraIndicaties": "Minder geschikt bij slechte internetverbinding.",
+    "onderbouwing": "Automatische spraakherkenning kan telefoongesprekken toegankelijk maken en zelfstandigheid vergroten voor slechthorende gebruikers.",
+    "praktijk": "Telefonisch klantcontact, overleg met leveranciers/collega’s.",
+    "voordelen": [
+     "Telefonische communicatie toegankelijk",
+     "Zelfstandigheid vergroten",
+     "Participatie op de werkvloer verbeteren"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Enkele minuten (download en installatie)",
+    "bijgewerktOpWebsite": "2025-08-28T19:01:23.505Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-spraak-naar-tekst-vergaderingen-speaksee": {
+   "naam": "Spraak naar tekst (vergaderingen) - SpeakSee",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf",
+    "welz"
+   ],
+   "omschrijving": "Maakt groepsgesprekken en vergaderingen toegankelijk voor slechthorenden en doven.",
+   "leveranciers": "SpeakSee",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/spraak-naar-tekst-vergaderingen-speaksee/\nLeveranciers: SpeakSee (https://speaksee.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Enkele minuten (plug & play).\nVoordelen: Toegankelijkheid van groepsgesprekken; Minder afhankelijkheid van tolk; Verbeterde participatie in overleg.\nOnderbouwing: Gebruik van automatische spraakherkenning en microfoonarrays is bewezen effectief voor verstaanbaarheid en inclusie in groepscontext.",
+   "tint": {
+    "slug": "spraak-naar-tekst-vergaderingen-speaksee",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Horen"
+    ],
+    "watIsHet": "Draagbare microfoons en app die spraak van meerdere sprekers in vergaderingen live omzetten naar tekst op smartphone/tablet/laptop.",
+    "watDoetHet": "Maakt groepsgesprekken en vergaderingen toegankelijk voor slechthorenden en doven.",
+    "geschiktWerk": "Teamoverleggen, vergaderingen, groepsbesprekingen.",
+    "doelgroep": "Mensen die niet of onvoldoende spraak kunnen verstaan door gehoorverlies.",
+    "implementatie": "Microfoons verdelen onder sprekers; verbinding met app; korte uitleg voor gebruik.",
+    "contraIndicaties": "Niet geschikt in extreem rumoerige omgevingen.",
+    "onderbouwing": "Gebruik van automatische spraakherkenning en microfoonarrays is bewezen effectief voor verstaanbaarheid en inclusie in groepscontext.",
+    "praktijk": "Vergaderingen, klaslokalen, trainingen.",
+    "voordelen": [
+     "Toegankelijkheid van groepsgesprekken",
+     "Minder afhankelijkheid van tolk",
+     "Verbeterde participatie in overleg"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Enkele minuten (plug & play)",
+    "bijgewerktOpWebsite": "2025-08-28T19:01:07.297Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.659Z"
+  },
+  "tint-spraakherkenning-schrijfondersteuning-dragon": {
+   "naam": "Spraakherkenning voor schrijfondersteuning - Dragon",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek",
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "prod",
+    "welz"
+   ],
+   "omschrijving": "Maakt het mogelijk om teksten te dicteren in plaats van te typen; ondersteunt schrijf- en administratieve taken.",
+   "leveranciers": "Nuance",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/spraakherkenning-schrijfondersteuning-dragon/\nLeveranciers: Nuance (https://www.nuance.com/dragon.html)\nVolwassenheid: Volwassen. Tijd om in te voeren: Enkele uren.\nVoordelen: Sneller en foutlozer teksten produceren; Toegankelijkheid schrijven vergroten; Minder fysieke belasting door typen.\nOnderbouwing: Spraakherkenning verhoogt productiviteit en toegankelijkheid voor mensen met motorische of cognitieve uitdagingen.",
+   "tint": {
+    "slug": "spraakherkenning-schrijfondersteuning-dragon",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Omgang",
+     "Schrijven"
+    ],
+    "watIsHet": "Software die gesproken taal omzet naar tekst. Dragon is een toonaangevend programma voor nauwkeurige spraakherkenning.",
+    "watDoetHet": "Maakt het mogelijk om teksten te dicteren in plaats van te typen; ondersteunt schrijf- en administratieve taken.",
+    "geschiktWerk": "Administratie, verslaglegging, rapporten en e-mails opstellen.",
+    "doelgroep": "Mensen met motorische beperkingen of dyslexie, en medewerkers die schrijven als belastend ervaren.",
+    "implementatie": "Installatie van software, korte training om spraakprofiel te optimaliseren.",
+    "contraIndicaties": "Minder effectief bij sterk dialect of rumoerige omgeving.",
+    "onderbouwing": "Spraakherkenning verhoogt productiviteit en toegankelijkheid voor mensen met motorische of cognitieve uitdagingen.",
+    "praktijk": "Schrijfondersteuning in kantoorwerk, onderwijs, zorg.",
+    "voordelen": [
+     "Sneller en foutlozer teksten produceren",
+     "Toegankelijkheid schrijven vergroten",
+     "Minder fysieke belasting door typen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Enkele uren",
+    "bijgewerktOpWebsite": "2025-08-28T19:01:50.572Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-stressmanagement-app-autisme-sam": {
+   "naam": "Stressmanagement app autisme - SAM",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz",
+    "zelf"
+   ],
+   "omschrijving": "Biedt oefeningen en signaleringen voor stressreductie en zelfmanagement.",
+   "leveranciers": "SAM App",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/stressmanagement-app-autisme-sam/\nLeveranciers: SAM App (https://samapp.com)\nVolwassenheid: Opkomend. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Stresssignalen herkennen; Zelfregulatie ondersteunen; Minder afhankelijkheid begeleiding.\nOnderbouwing: Digitale interventies kunnen stressregulatie bij mensen met autisme ondersteunen.",
+   "tint": {
+    "slug": "stressmanagement-app-autisme-sam",
+    "ondertitel": "Bewaken van stress en belastbaarheidsgrenzen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Stress"
+    ],
+    "watIsHet": "Mobiele app speciaal ontwikkeld om mensen met autisme te helpen stresssignalen te herkennen en reguleren.",
+    "watDoetHet": "Biedt oefeningen en signaleringen voor stressreductie en zelfmanagement.",
+    "geschiktWerk": "Kantoor, onderwijs, begeleid werk.",
+    "doelgroep": "Mensen met autisme die ondersteuning willen bij stress en emotieregulatie.",
+    "implementatie": "Downloaden en instellen app; training in gebruik.",
+    "contraIndicaties": "Niet geschikt zonder begeleiding bij ernstige stressklachten.",
+    "onderbouwing": "Digitale interventies kunnen stressregulatie bij mensen met autisme ondersteunen.",
+    "praktijk": "Dagelijks gebruik op werkvloer of thuis.",
+    "voordelen": [
+     "Stresssignalen herkennen",
+     "Zelfregulatie ondersteunen",
+     "Minder afhankelijkheid begeleiding"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:18:24.408Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-stressmanagement-app-burnout-stresscoach": {
+   "naam": "Stressmanagement app burnout - StressCoach",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Helpt werknemers stress te reduceren en herstel te bevorderen.",
+   "leveranciers": "StressCoach",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/stressmanagement-app-burnout-stresscoach/\nLeveranciers: StressCoach (https://stresscoachapp.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Burn-out preventie; Herstel ondersteunen; Bewustwording van stresssignalen.\nOnderbouwing: App-gebaseerde stressinterventies tonen effect op reductie van stressklachten en burn-out symptomen.",
+   "tint": {
+    "slug": "stressmanagement-app-burnout-stresscoach",
+    "ondertitel": "Bewaken van stress en belastbaarheidsgrenzen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Stress"
+    ],
+    "watIsHet": "Mobiele app met psycho-educatie, oefeningen en monitoring gericht op burn-out herstel en preventie.",
+    "watDoetHet": "Helpt werknemers stress te reduceren en herstel te bevorderen.",
+    "geschiktWerk": "Sectoren met hoge mentale belasting.",
+    "doelgroep": "Mensen met (risico op) burn-out.",
+    "implementatie": "Installatie app; begeleiding door coach of zelfstandig gebruik.",
+    "contraIndicaties": "Niet geschikt als vervanging voor medische behandeling bij ernstige klachten.",
+    "onderbouwing": "App-gebaseerde stressinterventies tonen effect op reductie van stressklachten en burn-out symptomen.",
+    "praktijk": "Werkhervatting en hersteltrajecten.",
+    "voordelen": [
+     "Burn-out preventie",
+     "Herstel ondersteunen",
+     "Bewustwording van stresssignalen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:18:42.909Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-stressmanagement-hartfrequentie-knowyourself": {
+   "naam": "Stressmanagement metingen Hart Frequentie en app - KnowYourself",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Geeft realtime feedback over stress en ontspanning; ondersteunt stressmanagement door zelfmonitoring.",
+   "leveranciers": "KnowYourself",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/stressmanagement-hartfrequentie-knowyourself/\nLeveranciers: KnowYourself (https://www.knowyourself.app)\nVolwassenheid: Opkomend. Tijd om in te voeren: Kort.\nVoordelen: Bewustwording stressniveau; Zelfregulatie verbeteren; Voorkomen van burn-out.\nOnderbouwing: HRV-metingen zijn een bekende indicator voor stressregulatie en worden toegepast in werkcontexten.",
+   "tint": {
+    "slug": "stressmanagement-hartfrequentie-knowyourself",
+    "ondertitel": "Bewaken van stress en belastbaarheidsgrenzen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Stress"
+    ],
+    "watIsHet": "Wearable of sensor die hartslagvariabiliteit meet en via een app stressniveaus inzichtelijk maakt.",
+    "watDoetHet": "Geeft realtime feedback over stress en ontspanning; ondersteunt stressmanagement door zelfmonitoring.",
+    "geschiktWerk": "Sectoren met hoge werkdruk of wisselende belasting.",
+    "doelgroep": "Werknemers die hun stress en belastbaarheid beter willen reguleren.",
+    "implementatie": "Dragen van sensor; koppeling met app; uitleg interpretatie van resultaten.",
+    "contraIndicaties": "Niet geschikt voor mensen die gestrest raken van continue monitoring.",
+    "onderbouwing": "HRV-metingen zijn een bekende indicator voor stressregulatie en worden toegepast in werkcontexten.",
+    "praktijk": "Kantoor, zorg, onderwijs, productie.",
+    "voordelen": [
+     "Bewustwording stressniveau",
+     "Zelfregulatie verbeteren",
+     "Voorkomen van burn-out"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "Kort",
+    "bijgewerktOpWebsite": "2025-08-28T19:18:08.146Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-tekst-laten-voorlezen-voorleespen": {
+   "naam": "Tekst laten voorlezen (voorleespen)",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Met een druk op de knop markeert een lampje waar de tekst begint. De pen zet de tekst om in spraak via de ingebouwde luidspreker of een bluetooth-oortje. Er is geen internet nodig, dus het werkt overal op de werkvloer.",
+   "leveranciers": "C-Pen",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/tekst-laten-voorlezen-voorleespen/\nLeveranciers: C-Pen (https://cpen.com)\nVolwassenheid: Volwassen.\nVoordelen: Zelfstandig teksten lezen, op het werk en thuis; Werkt zonder internet; Eenvoudig in gebruik.",
+   "tint": {
+    "slug": "tekst-laten-voorlezen-voorleespen",
+    "ondertitel": "Tekst aanwijzen en direct laten voorlezen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Lezen",
+     "Zelfstandig",
+     "Zien"
+    ],
+    "watIsHet": "Een voorleespen is een pen met een kleine camera en een luidspreker. Je wijst een tekst aan en de pen leest die hardop voor, van papier, een scherm of een telefoon.",
+    "watDoetHet": "Met een druk op de knop markeert een lampje waar de tekst begint. De pen zet de tekst om in spraak via de ingebouwde luidspreker of een bluetooth-oortje. Er is geen internet nodig, dus het werkt overal op de werkvloer.",
+    "geschiktWerk": "Werk waarin je korte teksten moet lezen: etiketten, pakbonnen, werkbonnen, instructies en formulieren.",
+    "doelgroep": "Blinde en slechtziende medewerkers, medewerkers die laaggeletterd zijn en medewerkers met niet-aangeboren hersenletsel (NAH).",
+    "implementatie": "Een voorleespen per medewerker en een korte uitleg. Een oortje of koptelefoon is handig in een rumoerige of gedeelde ruimte.",
+    "contraIndicaties": "Tabellen en tekst in kolommen worden lastig voorgelezen. Voor tekst op de telefoon is een voorlees-app vaak een goedkoper alternatief.",
+    "onderbouwing": "",
+    "praktijk": "Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/voorleespen-info-praktijk-inclusievetechnologie-nl/",
+    "voordelen": [
+     "Zelfstandig teksten lezen, op het werk en thuis",
+     "Werkt zonder internet",
+     "Eenvoudig in gebruik"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.478Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-tekst-naar-spraak-speechify-readspeaker": {
+   "naam": "Tekst naar spraak - Speechify/ReadSpeaker",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Ondersteunt begrijpend lezen en toegankelijkheid van digitale documenten en websites.",
+   "leveranciers": "Speechify, ReadSpeaker",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/tekst-naar-spraak-speechify-readspeaker/\nLeveranciers: Speechify (https://speechify.com), ReadSpeaker (https://www.readspeaker.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Ondersteuning bij lezen en begrijpen; Toegankelijkheid vergroten; Zelfstandigheid verhogen.\nOnderbouwing: Voorleesfuncties bevorderen leesbegrip en verminderen cognitieve belasting bij dyslexie of visuele beperkingen.",
+   "tint": {
+    "slug": "tekst-naar-spraak-speechify-readspeaker",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Lezen"
+    ],
+    "watIsHet": "Software die geschreven tekst hardop voorleest in natuurlijke stemmen.",
+    "watDoetHet": "Ondersteunt begrijpend lezen en toegankelijkheid van digitale documenten en websites.",
+    "geschiktWerk": "Opleiding, administratie, informatieverwerking.",
+    "doelgroep": "Mensen met dyslexie, visuele beperkingen of concentratieproblemen.",
+    "implementatie": "Installatie als app of web-extensie; eenvoudige bediening.",
+    "contraIndicaties": "Niet ideaal bij complexe tabellen of grafieken.",
+    "onderbouwing": "Voorleesfuncties bevorderen leesbegrip en verminderen cognitieve belasting bij dyslexie of visuele beperkingen.",
+    "praktijk": "Voorlezen van rapporten, instructies, mails.",
+    "voordelen": [
+     "Ondersteuning bij lezen en begrijpen",
+     "Toegankelijkheid vergroten",
+     "Zelfstandigheid verhogen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:02:12.708Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-trainen-vr-omgeving-vorkheftruckchauffeur-playsight": {
+   "naam": "Trainen in VR omgeving: training vorkheftruckchauffeur - Playsight",
+   "categorie": "Digitale werkinstructies",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "zelf",
+    "kval",
+    "inzet"
+   ],
+   "omschrijving": "Maakt veilig oefenen en trainen van vaardigheden mogelijk zonder risico’s.",
+   "leveranciers": "Playsight VR",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/trainen-vr-omgeving-vorkheftruckchauffeur-playsight/\nLeveranciers: Playsight VR (https://www.playsightvr.com)\nVolwassenheid: Opkomend.\nVoordelen: Veilig oefenen zonder risico; Sneller leren door herhaling; Betere inzetbaarheid op werkvloer.\nOnderbouwing: VR-training wordt breed toegepast en verhoogt leereffectiviteit en veiligheid.",
+   "tint": {
+    "slug": "trainen-vr-omgeving-vorkheftruckchauffeur-playsight",
+    "ondertitel": "Begeleiding bij werkplanning en uitvoering en reizen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Zelfstandig"
+    ],
+    "watIsHet": "VR-omgeving waarin taken van een vorkheftruckchauffeur realistisch worden nagebootst.",
+    "watDoetHet": "Maakt veilig oefenen en trainen van vaardigheden mogelijk zonder risico’s.",
+    "geschiktWerk": "Logistiek, magazijn.",
+    "doelgroep": "Mensen in opleiding tot heftruckchauffeur of met behoefte aan herhalingstraining.",
+    "implementatie": "Installeren VR-systeem; scenario’s instellen.",
+    "contraIndicaties": "Niet geschikt voor mensen met sterke cybersickness.",
+    "onderbouwing": "VR-training wordt breed toegepast en verhoogt leereffectiviteit en veiligheid.",
+    "praktijk": "Training en herinstructie.",
+    "voordelen": [
+     "Veilig oefenen zonder risico",
+     "Sneller leren door herhaling",
+     "Betere inzetbaarheid op werkvloer"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:23:19.821Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-vaktaal-leren-vaktaalapp": {
+   "naam": "Vaktaal leren (VaktaalApp)",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet",
+    "kval"
+   ],
+   "omschrijving": "De woordenlijsten combineren algemene woorden met woorden van het eigen bedrijf of de branche. De werkgever levert foto's aan van machines en apparaten, Het WerkWoord maakt er oefeningen bij. Belangrijke woorden komen vaker terug. Medewerker, werkgever of docent zien direct hoe de taal groeit.",
+   "leveranciers": "Het WerkWoord (VaktaalApp)",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/vaktaal-leren-vaktaalapp/\nLeveranciers: Het WerkWoord (VaktaalApp) (https://www.vaktaalapp.nl)\nVolwassenheid: Volwassen.\nVoordelen: Nieuwe medewerkers begrijpen instructies sneller; Oefenen in eigen tempo, waar en wanneer het uitkomt; Taalgroei is meetbaar.",
+   "tint": {
+    "slug": "vaktaal-leren-vaktaalapp",
+    "ondertitel": "Nederlandse woorden van de werkvloer oefenen",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Lezen",
+     "Schrijven",
+     "Skills",
+     "Spreken"
+    ],
+    "watIsHet": "De VaktaalApp van Het WerkWoord is een app op de telefoon waarmee medewerkers de Nederlandse woorden leren die ze in hun eigen werk nodig hebben. Ze oefenen luisteren, spreken, lezen en schrijven.",
+    "watDoetHet": "De woordenlijsten combineren algemene woorden met woorden van het eigen bedrijf of de branche. De werkgever levert foto's aan van machines en apparaten, Het WerkWoord maakt er oefeningen bij. Belangrijke woorden komen vaker terug. Medewerker, werkgever of docent zien direct hoe de taal groeit.",
+    "geschiktWerk": "Productie, logistiek, techniek, zorg, schoonmaak en ander werk met eigen vaktermen, vooral waar veiligheidsinstructies goed begrepen moeten worden.",
+    "doelgroep": "Anderstalige medewerkers met taalniveau A0 tot B1, Nederlandstalige medewerkers die moeite hebben met lezen, schrijven of vaktaal, en studenten in een leerwerktraject.",
+    "implementatie": "Een abonnement via de werkgever, branche of taalschool, en een smartphone per medewerker. Lever foto's en woordenlijsten van de werkvloer aan. De app werkt los of naast een taaltraining.",
+    "contraIndicaties": "Alleen beschikbaar met een betaald abonnement. Voor wie nog geen basis in het Nederlands heeft, vervangt de app geen volledige taalcursus.",
+    "onderbouwing": "",
+    "praktijk": "Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/vaktaalapp/",
+    "voordelen": [
+     "Nieuwe medewerkers begrijpen instructies sneller",
+     "Oefenen in eigen tempo, waar en wanneer het uitkomt",
+     "Taalgroei is meetbaar"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.424Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-verbeteren-zicht-esight": {
+   "naam": "Verbeteren zicht - eSight",
+   "categorie": "Fysieke ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "zelf"
+   ],
+   "omschrijving": "Vergroot zicht voor mensen met slechtziendheid; maakt lezen en werken mogelijk.",
+   "leveranciers": "eSight",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/verbeteren-zicht-esight/\nLeveranciers: eSight (https://www.esighteyewear.com)\nVolwassenheid: Volwassen.\nVoordelen: Verbeterd zicht en leesvermogen; Meer zelfstandigheid; Toegang tot detailwerk.\nOnderbouwing: Onderzoeken tonen verbeteringen in leesvaardigheid en levenskwaliteit bij gebruik van elektronische brillen.",
+   "tint": {
+    "slug": "verbeteren-zicht-esight",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Lichamelijk functioneren",
+    "themas": [
+     "Zien"
+    ],
+    "watIsHet": "Elektronische bril die camerabeelden in realtime vergroot en optimaliseert.",
+    "watDoetHet": "Vergroot zicht voor mensen met slechtziendheid; maakt lezen en werken mogelijk.",
+    "geschiktWerk": "Lezen, beeldschermwerk, detailtaken.",
+    "doelgroep": "Mensen met ernstige visuele beperking maar met restvisus.",
+    "implementatie": "Aanpassen bril; korte instructie; gewenning aan beeldweergave.",
+    "contraIndicaties": "Minder effectief bij volledige blindheid.",
+    "onderbouwing": "Onderzoeken tonen verbeteringen in leesvaardigheid en levenskwaliteit bij gebruik van elektronische brillen.",
+    "praktijk": "Kantoorwerk, onderwijs, administratie.",
+    "voordelen": [
+     "Verbeterd zicht en leesvermogen",
+     "Meer zelfstandigheid",
+     "Toegang tot detailwerk"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T11:47:23.404Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-vereenvoudiging-digitale-tekst-capito-leessimpel": {
+   "naam": "Vereenvoudiging van digitale tekst - Capito/Leessimpel",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Vergroot begrijpelijkheid van complexe teksten, zoals overheidsbrieven of werkdocumenten.",
+   "leveranciers": "Capito, Leessimpel",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/vereenvoudiging-digitale-tekst-capito-leessimpel/\nLeveranciers: Capito (https://www.capito.nl), Leessimpel (https://www.leessimpel.nl)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Complexe teksten begrijpelijk maken; Zelfstandigheid bij lezen vergroten; Verbeterde communicatie.\nOnderbouwing: Eenvoudig Nederlands verhoogt begrijpelijkheid en participatie bij mensen met beperkte taalvaardigheid.",
+   "tint": {
+    "slug": "vereenvoudiging-digitale-tekst-capito-leessimpel",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Lezen"
+    ],
+    "watIsHet": "Software die teksten automatisch of handmatig omzet naar eenvoudig Nederlands.",
+    "watDoetHet": "Vergroot begrijpelijkheid van complexe teksten, zoals overheidsbrieven of werkdocumenten.",
+    "geschiktWerk": "Kantoorwerk, communicatie, opleidingen.",
+    "doelgroep": "Mensen met beperkte taalvaardigheid of cognitieve beperking.",
+    "implementatie": "Aanmelden bij online platform; teksten invoeren en vereenvoudigen.",
+    "contraIndicaties": "Niet alle nuances van brontekst blijven behouden.",
+    "onderbouwing": "Eenvoudig Nederlands verhoogt begrijpelijkheid en participatie bij mensen met beperkte taalvaardigheid.",
+    "praktijk": "Eenvoudige handleidingen, HR-documenten, veiligheidsinstructies.",
+    "voordelen": [
+     "Complexe teksten begrijpelijk maken",
+     "Zelfstandigheid bij lezen vergroten",
+     "Verbeterde communicatie"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:02:34.060Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-vermoeidheid-verminderen-kanker-untire": {
+   "naam": "Vermoeidheid verminderen bij kanker - Untire",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "welz",
+    "inzet"
+   ],
+   "omschrijving": "Biedt strategieën en oefeningen om vermoeidheid te verminderen en energiebalans te herstellen.",
+   "leveranciers": "Untire",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/vermoeidheid-verminderen-kanker-untire/\nLeveranciers: Untire (https://untire.me)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Vermindering vermoeidheid; Betere energiebalans; Ondersteuning re-integratie.\nOnderbouwing: Wetenschappelijk onderzoek toont aan dat Untire vermoeidheid bij kankeroverlevenden kan verminderen.",
+   "tint": {
+    "slug": "vermoeidheid-verminderen-kanker-untire",
+    "ondertitel": "Bewaken van stress en belastbaarheidsgrenzen",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Armen",
+     "Benen",
+     "Handen",
+     "Nek",
+     "Rug",
+     "Stress"
+    ],
+    "watIsHet": "Mobiele app met oefeningen en psycho-educatie gericht op vermoeidheidsklachten bij kanker.",
+    "watDoetHet": "Biedt strategieën en oefeningen om vermoeidheid te verminderen en energiebalans te herstellen.",
+    "geschiktWerk": "Ondersteunend in re-integratie en herstel.",
+    "doelgroep": "Mensen die kanker hebben (gehad) en vermoeidheidsklachten ervaren.",
+    "implementatie": "Download app; zelfstandig gebruik of met begeleiding.",
+    "contraIndicaties": "Niet vervangend voor medische behandeling.",
+    "onderbouwing": "Wetenschappelijk onderzoek toont aan dat Untire vermoeidheid bij kankeroverlevenden kan verminderen.",
+    "praktijk": "Re-integratie na kanker, hersteltrajecten.",
+    "voordelen": [
+     "Vermindering vermoeidheid",
+     "Betere energiebalans",
+     "Ondersteuning re-integratie"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:21:18.241Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-versterken-stem-stemaandoening-whispp": {
+   "naam": "Versterken stem bij stemaandoening - Whispp",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "inzet",
+    "welz"
+   ],
+   "omschrijving": "Geeft mensen met stemproblemen een verstaanbare stem.",
+   "leveranciers": "Whispp",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/versterken-stem-stemaandoening-whispp/\nLeveranciers: Whispp (https://www.whispp.com)\nVolwassenheid: Opkomend. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Beter verstaanbaar communiceren; Zelfvertrouwen vergroten; Participatie in overleg verbeteren.\nOnderbouwing: Realtime spraaktechnologie maakt communicatie toegankelijk voor mensen met stemproblemen.",
+   "tint": {
+    "slug": "versterken-stem-stemaandoening-whispp",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Spreken"
+    ],
+    "watIsHet": "App die fluisterstem omzet naar natuurlijke, verstaanbare spraak in real-time.",
+    "watDoetHet": "Geeft mensen met stemproblemen een verstaanbare stem.",
+    "geschiktWerk": "Telefonie, vergaderingen, klantcontact.",
+    "doelgroep": "Mensen met stemproblemen of aandoeningen waardoor de stem zwak is.",
+    "implementatie": "Download app; korte instructie; koppeling met microfoon.",
+    "contraIndicaties": "Niet geschikt bij volledige afonie.",
+    "onderbouwing": "Realtime spraaktechnologie maakt communicatie toegankelijk voor mensen met stemproblemen.",
+    "praktijk": "Vergaderingen, klantenservice, online meetings.",
+    "voordelen": [
+     "Beter verstaanbaar communiceren",
+     "Zelfvertrouwen vergroten",
+     "Participatie in overleg verbeteren"
+    ],
+    "volwassenheid": "Opkomend",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T18:47:14.473Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-vertaaltechnologie-spraak-timekettle": {
+   "naam": "Vertaaltechnologie van spraak - Timekettle",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "inzet",
+    "kval"
+   ],
+   "omschrijving": "Vergemakkelijkt communicatie in meertalige omgevingen.",
+   "leveranciers": "Timekettle",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/vertaaltechnologie-spraak-timekettle/\nLeveranciers: Timekettle (https://www.timekettle.co)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Betere communicatie in meertalige context; Meer inclusieve samenwerking; Vergrote inzetbaarheid medewerkers.\nOnderbouwing: Realtime vertaaltechnologie vergemakkelijkt interactie in meertalige werkcontexten en bevordert inclusie.",
+   "tint": {
+    "slug": "vertaaltechnologie-spraak-timekettle",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Horen",
+     "Omgang",
+     "Spreken"
+    ],
+    "watIsHet": "Draagbare oortjes en app die spraak simultaan vertalen naar verschillende talen.",
+    "watDoetHet": "Vergemakkelijkt communicatie in meertalige omgevingen.",
+    "geschiktWerk": "Internationale samenwerking, klantenservice, productie.",
+    "doelgroep": "Mensen die met anderstalige collega’s of klanten communiceren.",
+    "implementatie": "Installeren app; koppelen met oortjes; talen selecteren.",
+    "contraIndicaties": "Niet geschikt voor jargonrijke gesprekken of slechte internetverbinding.",
+    "onderbouwing": "Realtime vertaaltechnologie vergemakkelijkt interactie in meertalige werkcontexten en bevordert inclusie.",
+    "praktijk": "Internationale vergaderingen, klantgesprekken, instructies.",
+    "voordelen": [
+     "Betere communicatie in meertalige context",
+     "Meer inclusieve samenwerking",
+     "Vergrote inzetbaarheid medewerkers"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:04:38.208Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-visuele-informatie-bril-naar-spraak-orcam": {
+   "naam": "Visuele informatie (bril) naar spraak - OrCam",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Ondersteunt zelfstandig functioneren door real-time informatie om te zetten naar spraak.",
+   "leveranciers": "OrCam",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/visuele-informatie-bril-naar-spraak-orcam/\nLeveranciers: OrCam (https://www.orcam.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Kort.\nVoordelen: Zelfstandigheid vergroten bij visuele beperking; Toegang tot tekst en informatie; Verbeterde sociale participatie.\nOnderbouwing: Studies tonen aan dat draagbare herkenningstechnologie de autonomie van mensen met een visuele beperking vergroot.",
+   "tint": {
+    "slug": "visuele-informatie-bril-naar-spraak-orcam",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Lezen",
+     "Zien"
+    ],
+    "watIsHet": "Slimme bril met camera die tekst, objecten en gezichten herkent en via spraak teruggeeft.",
+    "watDoetHet": "Ondersteunt zelfstandig functioneren door real-time informatie om te zetten naar spraak.",
+    "geschiktWerk": "Navigatie, lezen, herkennen van mensen en objecten.",
+    "doelgroep": "Mensen met een visuele beperking.",
+    "implementatie": "Aanpassen bril; korte instructie; koppeling met app.",
+    "contraIndicaties": "Minder effectief in lawaaiige of slecht verlichte omgevingen.",
+    "onderbouwing": "Studies tonen aan dat draagbare herkenningstechnologie de autonomie van mensen met een visuele beperking vergroot.",
+    "praktijk": "Lezen van documenten, navigeren in werkomgeving.",
+    "voordelen": [
+     "Zelfstandigheid vergroten bij visuele beperking",
+     "Toegang tot tekst en informatie",
+     "Verbeterde sociale participatie"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Kort",
+    "bijgewerktOpWebsite": "2025-08-28T19:02:55.733Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-visuele-informatie-smartphone-naar-spraak-seeing-ai": {
+   "naam": "Visuele informatie (smartphone/tablet) naar spraak - Seeing AI",
+   "categorie": "Communicatie en taal",
+   "knelpunten": [
+    "fysiek"
+   ],
+   "dimensies": [
+    "zelf",
+    "inzet"
+   ],
+   "omschrijving": "Biedt toegankelijkheid door real-time visuele informatie hoorbaar te maken.",
+   "leveranciers": "Microsoft",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/visuele-informatie-smartphone-naar-spraak-seeing-ai/\nLeveranciers: Microsoft (https://www.microsoft.com/seeing-ai)\nVolwassenheid: Volwassen. Tijd om in te voeren: Direct inzetbaar.\nVoordelen: Toegang tot visuele informatie; Zelfstandigheid vergroten; Verbeterde participatie.\nOnderbouwing: Seeing AI wordt internationaal gebruikt en vergroot zelfstandigheid bij mensen met visuele beperkingen.",
+   "tint": {
+    "slug": "visuele-informatie-smartphone-naar-spraak-seeing-ai",
+    "ondertitel": "Hulp bij waarneming en communicatie",
+    "aspect": "Sociaal functioneren",
+    "themas": [
+     "Lezen",
+     "Zien"
+    ],
+    "watIsHet": "App van Microsoft die met de camera tekst, objecten en personen herkent en beschrijft via spraak.",
+    "watDoetHet": "Biedt toegankelijkheid door real-time visuele informatie hoorbaar te maken.",
+    "geschiktWerk": "Dagelijks werk en navigatie in kantoor, logistiek, onderwijs.",
+    "doelgroep": "Mensen met visuele beperking.",
+    "implementatie": "Downloaden app; korte instructie; gebruik smartphonecamera.",
+    "contraIndicaties": "Beperkt in donkere omgevingen of zonder internetverbinding.",
+    "onderbouwing": "Seeing AI wordt internationaal gebruikt en vergroot zelfstandigheid bij mensen met visuele beperkingen.",
+    "praktijk": "Lezen van documenten, identificeren van objecten, navigeren.",
+    "voordelen": [
+     "Toegang tot visuele informatie",
+     "Zelfstandigheid vergroten",
+     "Verbeterde participatie"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T19:03:26.289Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-vr-bril": {
+   "naam": "VR-bril voor psychosociale ondersteuning",
+   "categorie": "Cognitieve ondersteuning",
+   "knelpunten": [
+    "cognitief"
+   ],
+   "dimensies": [
+    "welz"
+   ],
+   "omschrijving": "De technologie zorgt voor psychosociale ondersteuning. Een trainer maakt een keuze uit vijftien verschillende filmpjes van moeilijke situaties die als stressvol kunnen worden ervaren bijvoorbeeld een filmpje van een agressieve patiënt of een boze leidinggevende. De gekozen situatie wordt afgespeeld op de VR bril. De werknemer krijgt de mogelijkheid om keuzes te maken over hoe te reageren op de situatie, waarna het resultaat van deze keuzes in VR ervaren kan worden. De technologie wordt gebruikt als onderdeel van een meer omvattende stressmanagement training binnen een organisatie.",
+   "leveranciers": "Psylaris",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/vr-bril/\nLeveranciers: Psylaris (https://www.psylaris.com)\nVolwassenheid: Volwassen.\nVoordelen: Omgang met stressvolle situaties op het werk verbeteren; Mentale weerbaarheid vergroten; Mentale klachten, stress en burn-out voorkomen; Ziekteverzuim verminderen.\nOnderbouwing: Overzichtsstudie (Tan et al., 2022) over VR/AR in psychosociale revalidatie: effectief voor sociale vaardigheden, cognitieve functies en dagelijks functioneren; inzet in werksetting mogelijk. Link: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2022.1055204/full",
+   "tint": {
+    "slug": "vr-bril",
+    "ondertitel": "Hulp bij psychosociale klachten",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Omgang",
+     "Stress"
+    ],
+    "watIsHet": "De technologie bestaat uit een Virtual-Reality-bril en een computer met software.",
+    "watDoetHet": "De technologie zorgt voor psychosociale ondersteuning. Een trainer maakt een keuze uit vijftien verschillende filmpjes van moeilijke situaties die als stressvol kunnen worden ervaren bijvoorbeeld een filmpje van een agressieve patiënt of een boze leidinggevende. De gekozen situatie wordt afgespeeld op de VR bril. De werknemer krijgt de mogelijkheid om keuzes te maken over hoe te reageren op de situatie, waarna het resultaat van deze keuzes in VR ervaren kan worden. De technologie wordt gebruikt als onderdeel van een meer omvattende stressmanagement training binnen een organisatie.",
+    "geschiktWerk": "De technologie kan relevant zijn in elke sector en werkomgeving.",
+    "doelgroep": "De technologie is geschikt voor werknemers die kampen met mentale klachten, stress of burn-out als gevolg van hoge werkdruk en stressvolle situaties.",
+    "implementatie": "Begeleide inzet door een trainer; scenario’s/filmpjes vooraf selecteren; rustige ruimte voor gebruik.",
+    "contraIndicaties": "Let op mogelijke duizeligheid of desoriëntatie; niet geschikt bij bepaalde visuele/neurologische aandoeningen.",
+    "onderbouwing": "Overzichtsstudie (Tan et al., 2022) over VR/AR in psychosociale revalidatie: effectief voor sociale vaardigheden, cognitieve functies en dagelijks functioneren; inzet in werksetting mogelijk. Link: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2022.1055204/full",
+    "praktijk": "",
+    "voordelen": [
+     "Omgang met stressvolle situaties op het werk verbeteren",
+     "Mentale weerbaarheid vergroten",
+     "Mentale klachten, stress en burn-out voorkomen",
+     "Ziekteverzuim verminderen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2025-08-28T19:20:31.661Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.660Z"
+  },
+  "tint-werkinstructies-met-controle-operator-support-systeem": {
+   "naam": "Werkinstructies met controle (Operator Support Systeem)",
+   "categorie": "Digitale werkinstructies",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "kval",
+    "zelf",
+    "prod"
+   ],
+   "omschrijving": "Het systeem leidt een medewerker stap voor stap door het werk, met tekst, foto's, video of symbolen. De sensoren zien of het juiste onderdeel uit de juiste bak wordt gepakt en geven direct een licht- of geluidssignaal bij een fout. Zo worden fouten meteen opgevangen en leren nieuwe medewerkers het werk sneller. Dat is het verschil met alleen een beamer die instructies projecteert.",
+   "leveranciers": "Arkite",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/werkinstructies-met-controle-operator-support-systeem/\nLeveranciers: Arkite (https://arkite.com)\nVolwassenheid: Volwassen.\nVoordelen: Minder fouten door controle op elke stap; Nieuwe medewerkers sneller ingewerkt; Complex werk bereikbaar voor meer mensen.",
+   "tint": {
+    "slug": "werkinstructies-met-controle-operator-support-systeem",
+    "ondertitel": "Projectie van instructies met feedback op elke stap",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Een Operator Support Systeem (OSS) combineert een beamer, sensoren en software op een werkplek. Het projecteert instructies precies daar waar ze nodig zijn: op het product, de werktafel of de bak met onderdelen.",
+    "watDoetHet": "Het systeem leidt een medewerker stap voor stap door het werk, met tekst, foto's, video of symbolen. De sensoren zien of het juiste onderdeel uit de juiste bak wordt gepakt en geven direct een licht- of geluidssignaal bij een fout. Zo worden fouten meteen opgevangen en leren nieuwe medewerkers het werk sneller. Dat is het verschil met alleen een beamer die instructies projecteert.",
+    "geschiktWerk": "Assemblage, montage en inpakwerk met veel stappen of veel productvarianten.",
+    "doelgroep": "Medewerkers die moeite hebben om meerdere instructies te onthouden, bijvoorbeeld door een cognitieve beperking, en anderstalige medewerkers: de instructies werken ook met beeld en licht.",
+    "implementatie": "Een ingerichte werkplek met beamer, sensoren en software, en tijd om per product de stappen in te voeren. Leveranciers helpen meestal bij de inrichting.",
+    "contraIndicaties": "Vraagt een investering en voorbereidingstijd per product. Minder geschikt voor werk dat steeds anders is.",
+    "onderbouwing": "",
+    "praktijk": "Werkontwikkelbedrijf Senzer onderzocht samen met TNO hoe een OSS helpt bij de instroom en doorstroom van medewerkers. Bij Inclusief Groep in Ermelo maakt een OSS complex assemblagewerk aan schakelaars voor meterkasten toegankelijk voor meer medewerkers. Bron en meer praktijkverhalen: Kennisalliantie Inclusie en Technologie, https://inclusievetechnologie.nl/inclusieve-technologie/operator-support-systeem/",
+    "voordelen": [
+     "Minder fouten door controle op elke stap",
+     "Nieuwe medewerkers sneller ingewerkt",
+     "Complex werk bereikbaar voor meer mensen"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "",
+    "bijgewerktOpWebsite": "2026-11-04T18:02:06.584Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.661Z"
+  },
+  "tint-werkinstructies-op-slimme-bril": {
+   "naam": "Werkinstructies op slimme bril",
+   "categorie": "Digitale werkinstructies",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "prod",
+    "zelf",
+    "kval"
+   ],
+   "omschrijving": "Bij werkinstructies via een bril in vergelijking met een mobiele telefoon worden taken sneller voltooid en wordt minder vaak om hulp gevraagd aan collega’s.",
+   "leveranciers": "Iristick, Vuzix, Epson, Proceedix, Augmex, ProcessEye",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/werkinstructies-op-slimme-bril/\nLeveranciers: Iristick (https://www.iristick.com), Vuzix (https://www.vuzix.com), Epson (https://global.epson.com/products_and_drivers/see-through_mobile_viewer/), Proceedix (https://www.proceedix.com), Augmex (https://augmex.com), ProcessEye (https://processeye.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Afhankelijk van scenario en software.\nVoordelen: Taken sneller voltooid; Minder vaak om hulp gevraagd aan collega’s; Handen vrij tijdens uitvoering van taken.\nOnderbouwing: Uit een pilotstudie bleek voorkeur voor instructies via technologie (bril of telefoon) i.p.v. papier. Met telefoon was foutpercentage het laagst (handen vrij met houder). (Kolla et al., 2021) Bij werkinstructies via een bril t.o.v. telefoon werden taken sneller voltooid en werd minder vaak om hulp gevraagd. (De Araujo et al., 2019)",
+   "tint": {
+    "slug": "werkinstructies-op-slimme-bril",
+    "ondertitel": "Geven van stapsgewijze instructies",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Stress",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Werkinstructies via een slimme bril tonen stapsgewijze instructies in het zichtveld van de medewerker, zodat beide handen vrij blijven tijdens het uitvoeren van taken.",
+    "watDoetHet": "Bij werkinstructies via een bril in vergelijking met een mobiele telefoon worden taken sneller voltooid en wordt minder vaak om hulp gevraagd aan collega’s.",
+    "geschiktWerk": "Orderverzamelen in het magazijn.",
+    "doelgroep": "Medewerkers die stapsgewijze ondersteuning nodig hebben bij het uitvoeren van taken en waarvan het handig is dat beide handen vrij blijven.",
+    "implementatie": "Instructiescenario’s configureren (stappen), slimme bril koppelen aan software en testen in de werksetting.",
+    "contraIndicaties": "Gebruik kan oncomfortabel zijn voor dragers van bepaalde brillen of bij visuele overbelasting.",
+    "onderbouwing": "Uit een pilotstudie bleek voorkeur voor instructies via technologie (bril of telefoon) i.p.v. papier. Met telefoon was foutpercentage het laagst (handen vrij met houder). (Kolla et al., 2021) Bij werkinstructies via een bril t.o.v. telefoon werden taken sneller voltooid en werd minder vaak om hulp gevraagd. (De Araujo et al., 2019)",
+    "praktijk": "Orderverzamelen in het magazijn",
+    "voordelen": [
+     "Taken sneller voltooid",
+     "Minder vaak om hulp gevraagd aan collega’s",
+     "Handen vrij tijdens uitvoering van taken"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Afhankelijk van scenario en software",
+    "bijgewerktOpWebsite": "2025-08-28T18:56:40.433Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.661Z"
+  },
+  "tint-werkinstructies-op-tablet-of-smartphone": {
+   "naam": "Werkinstructies op tablet of smartphone",
+   "categorie": "Digitale werkinstructies",
+   "knelpunten": [
+    "cognitief",
+    "organisatorisch"
+   ],
+   "dimensies": [
+    "kval",
+    "zelf",
+    "prod"
+   ],
+   "omschrijving": "Bewezen effect: laagste foutpercentage t.o.v. papieren instructies of bril-gebaseerde instructies; minder hulp nodig van collega’s (met houder blijven handen vrij).",
+   "leveranciers": "Apple iPad, Samsung Galaxy Tab, Zebra (rugged)",
+   "prijs": "",
+   "bron": "TINT technologiebibliotheek: https://tint-achterhoek.nl/technologie/werkinstructies-op-tablet-of-smartphone/\nLeveranciers: Apple iPad (https://www.apple.com/ipad/), Samsung Galaxy Tab (https://www.samsung.com/tablets/), Zebra (rugged) (https://www.zebra.com)\nVolwassenheid: Volwassen. Tijd om in te voeren: Kort, na configuratie direct inzetbaar.\nVoordelen: Laag foutpercentage in uitvoering; Minder hulpvragen aan collega’s; Handen vrij mogelijk met houder.\nOnderbouwing: Studies tonen lagere foutpercentages bij mobile-based instructies en minder behoefte aan hulp t.o.v. papieren instructies of head-mounted displays.",
+   "tint": {
+    "slug": "werkinstructies-op-tablet-of-smartphone",
+    "ondertitel": "Geven van stapsgewijze instructies",
+    "aspect": "Persoonlijk functioneren",
+    "themas": [
+     "Begeleiding",
+     "Cognitief",
+     "Doelmatig",
+     "Stress",
+     "Zelfstandig"
+    ],
+    "watIsHet": "Stapsgewijze werkinstructies worden getoond op een tablet of smartphone via een app of webportaal.",
+    "watDoetHet": "Bewezen effect: laagste foutpercentage t.o.v. papieren instructies of bril-gebaseerde instructies; minder hulp nodig van collega’s (met houder blijven handen vrij).",
+    "geschiktWerk": "Taken met duidelijke volgorde en herhaling; mobiel op de werkvloer te gebruiken.",
+    "doelgroep": "Medewerkers die baat hebben bij duidelijke, dichtbij zichtbare stappen met tekst/beeld.",
+    "implementatie": "Opstellen van instructies; devices voorzien van beschermhoes/houder; koppeling met internet of lokale content.",
+    "contraIndicaties": "Niet ideaal voor taken waarbij continu beide handen nodig zijn zónder houder.",
+    "onderbouwing": "Studies tonen lagere foutpercentages bij mobile-based instructies en minder behoefte aan hulp t.o.v. papieren instructies of head-mounted displays.",
+    "praktijk": "Magazijn, assemblage, kwaliteitscontrole, schoonmaakrondes.",
+    "voordelen": [
+     "Laag foutpercentage in uitvoering",
+     "Minder hulpvragen aan collega’s",
+     "Handen vrij mogelijk met houder"
+    ],
+    "volwassenheid": "Volwassen",
+    "invoertijd": "Kort, na configuratie direct inzetbaar",
+    "bijgewerktOpWebsite": "2025-08-28T18:58:15.786Z"
+   },
+   "bronTint": true,
+   "aangemaakt": "2026-11-19T15:50:46.661Z"
+  }
+ }
+}
