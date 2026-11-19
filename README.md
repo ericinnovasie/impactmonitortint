@@ -8,6 +8,7 @@ Oorspronkelijke versie (claude.ai-artifact): https://claude.ai/artifact/C7GGUanp
 
 Vereist Node.js 22.13 of nieuwer.
 
+
 ```bash
 APP_PASSWORD='kies-een-sterk-wachtwoord' npm start
 ```
@@ -27,25 +28,41 @@ docker compose up -d --build
 |---|---|---|
 | `APP_PASSWORD` | leeg | Gedeeld wachtwoord voor alle gebruikers. Wijzigen logt iedereen uit. |
 | `PORT` | 3000 | Poort van de server |
-| `DATA_DIR` | `./data` | Map met de database (`impactmonitor.db`) en de sessiesleutel |
-| `COOKIE_SECURE` | false | Zet op `true` zodra de app via https draait |
+| `DATA_DIR` | `./data` | Map met de SQLite-database (alleen eigen server) |
+| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | leeg | Upstash Redis; als deze er zijn wordt Redis gebruikt in plaats van SQLite (Vercel zet ze automatisch) |
+| `COOKIE_SECURE` | automatisch | Op `true` zetten als de app via https draait maar de proxy geen `X-Forwarded-Proto` meestuurt |
 | `SESSION_DAYS` | 30 | Hoe lang iemand ingelogd blijft |
-| `SESSION_SECRET` | automatisch | Optioneel; anders aangemaakt in `DATA_DIR/.session-secret` |
+| `SESSION_SECRET` | automatisch | Optioneel; anders aangemaakt en bewaard in de database |
 
-### Online zetten
+### Online zetten op Vercel
 
-Elke host die Node of Docker draait en een blijvende schijf heeft werkt, bijvoorbeeld een VPS, Fly.io, Railway of Render (met persistent volume op `/data`). Zet er altijd https voor (bijv. Caddy, nginx of de host zelf) en stel dan `COOKIE_SECURE=true` in. Draait de app achter nginx, zet dan buffering uit voor `/api/events` (live updates).
+1. Vercel → **Add New → Project** → importeer de GitHub-repo. Laat alle instellingen staan (`vercel.json` regelt de rest).
+2. In het project: **Storage → Create Database → Upstash (Redis)** → koppel aan dit project. Vercel zet dan zelf `KV_REST_API_URL` en `KV_REST_API_TOKEN`.
+3. **Settings → Environment Variables**: voeg `APP_PASSWORD` toe.
+4. **Deployments → Redeploy**. Daarna gaat elke push naar `main` automatisch live.
+
+Controle: `https://<jouw-domein>/healthz` moet `"opslag":"redis"` tonen.
+
+Op Vercel serveert Vercel de bestanden in `public/` zelf; `api/index.js` handelt inloggen en de API af. De pagina's bevatten geen gegevens; alle gegevens gaan via de API en vereisen inlog.
+
+### Online zetten op een eigen server
+
+Elke host die Node of Docker draait en een blijvende schijf heeft werkt (VPS, Fly.io, Railway, Render met persistent volume op `/data`). Zet er https voor; achter een proxy die `X-Forwarded-Proto: https` meestuurt worden cookies automatisch `Secure`, anders `COOKIE_SECURE=true` instellen.
 
 ### Back-ups
 
 - In de app: Overzicht → "Back-up (JSON)" downloadt alle gegevens.
-- Op de server: `npm run backup` maakt een kopie van de database in `data/backups/` (ook veilig terwijl de app draait). Plan dit dagelijks via cron.
+- Op een eigen server (SQLite): `npm run backup` maakt een kopie van de database in `data/backups/` (ook veilig terwijl de app draait). Plan dit dagelijks via cron.
 - Terugzetten of overzetten van gegevens: `POST /api/import` met de JSON-back-up (ingelogd). Bestaande documenten met dezelfde id worden overschreven.
 
 ## Architectuur
 
 ```
-server.js          HTTP-server: inlog, REST-API, live updates (SSE), statische bestanden
+server.js          Eigen server (lokaal, Docker)
+api/index.js       Vercel-functie
+lib/app.js         Inlog, REST-API en statische bestanden (gedeeld)
+lib/store*.js      Opslag: SQLite (eigen server) of Upstash Redis (Vercel)
+vercel.json        Vercel-configuratie
 public/index.html  De volledige interface (meetinstrument, editors, rapporten)
 public/store.js    Opslaglaag in de browser met dezelfde interface als de claude.ai-db
 public/login.html  Inlogscherm
@@ -59,7 +76,7 @@ API (alles vereist een geldige sessie):
 | GET | `/api/{collectie}` | Alle documenten van een collectie |
 | PUT | `/api/{collectie}/{id}` | Document opslaan (volledig vervangen) |
 | DELETE | `/api/{collectie}/{id}` | Document verwijderen |
-| GET | `/api/events` | Live wijzigingen (Server-Sent Events) |
+| GET | `/api/versie` | Versienummer van de gegevens; de pagina controleert dit elke 5 seconden en haalt bij een wijziging alles opnieuw op |
 | GET | `/api/export` | Alle gegevens als JSON |
 | POST | `/api/import` | JSON-back-up inlezen |
 
@@ -92,7 +109,7 @@ Vijf dimensies (startset, nog af te stemmen met kennispartners), gedefinieerd in
 
 ## Datamodel
 
-Opgeslagen als JSON-documenten in SQLite (tabel `docs`: coll, id, data, updated), gedeeld tussen alle ingelogde gebruikers. Vier collecties:
+Opgeslagen als JSON-documenten in SQLite (tabel `docs`) of Upstash Redis (hash `tint:{collectie}`), gedeeld tussen alle ingelogde gebruikers. Vier collecties:
 
 - `bedrijven/{id}`: naam, plaats, sector, omvang, contact, voucher, voucherbedrag, toestemming (mag op menukaart genoemd worden), notities, voorbeeld (bool)
 - `trajecten/{id}`: bedrijfId, techId, techOmschrijving, taak, modus, kennisinstelling,

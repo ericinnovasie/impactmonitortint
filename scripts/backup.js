@@ -1,14 +1,12 @@
-// Maakt een consistente kopie van de database: node scripts/backup.js [doelmap]
+// Maakt een consistente kopie van de SQLite-database: node scripts/backup.js [doelmap]
+// (Op Vercel: gebruik de knop "Back-up (JSON)" in de app.)
 'use strict';
-process.removeAllListeners('warning');
 const path = require('node:path');
 const fs = require('node:fs');
-const { DatabaseSync } = require('node:sqlite');
 const dataDir = path.resolve(process.env.DATA_DIR || path.join(__dirname, '..', 'data'));
 const out = path.resolve(process.argv[2] || path.join(dataDir, 'backups'));
 fs.mkdirSync(out, { recursive: true });
 const file = path.join(out, `impactmonitor-${new Date().toISOString().replace(/[:.]/g, '-')}.db`);
-const db = new DatabaseSync(path.join(dataDir, 'impactmonitor.db'));
-db.exec(`VACUUM INTO '${file.replace(/'/g, "''")}'`);
-db.close();
+const store = require('../lib/store-sqlite')(dataDir);
+store.backup(file); store.close();
 console.log('Back-up gemaakt:', file);

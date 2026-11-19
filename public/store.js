@@ -1,13 +1,15 @@
 // Opslaglaag voor de TINT Impactmonitor.
 // Biedt dezelfde interface als de claude.ai-'db' (collection().doc().set/delete,
-// onSnapshot), maar praat met de eigen server: REST voor lezen/schrijven,
-// Server-Sent Events voor live updates van andere gebruikers.
+// onSnapshot), maar praat met de eigen server via REST. Wijzigingen van andere
+// gebruikers komen binnen doordat de pagina elke paar seconden het versienummer
+// van de gegevens controleert en bij een wijziging opnieuw ophaalt.
 (function () {
   'use strict';
+  const POLL_MS = 5000;
   const cache = {};        // coll -> {id: data}
   const listeners = {};    // coll -> [{next, error}]
   const loadedColls = new Set();
-  let es = null, everOpen = false;
+  let versie = null, timer = null, polling = false, failures = 0;
 
   function toLogin() { location.href = '/login'; }
 
@@ -29,41 +31,42 @@
   }
   function emit(coll) { (listeners[coll] || []).forEach(l => { try { l.next(snapshot(coll)); } catch (e) { console.error(e); } }); }
   function fail(coll, err) { (listeners[coll] || []).forEach(l => l.error && l.error(err)); }
+  function setConn(t) { const el = document.getElementById('conn'); if (el) el.textContent = t; }
 
   async function load(coll) {
     try {
-      const { docs } = await api('GET', '/api/' + coll);
-      cache[coll] = docs; loadedColls.add(coll); emit(coll);
+      const j = await api('GET', '/api/' + coll);
+      cache[coll] = j.docs; loadedColls.add(coll);
+      if (versie === null) versie = j.versie;
+      emit(coll);
     } catch (e) { if (e.code !== 'unauthenticated') fail(coll, e); }
   }
 
-  function connect() {
-    if (es) return;
-    es = new EventSource('/api/events');
-    es.onopen = () => {
-      setConn('Gedeelde opslag: verbonden');
-      // Na een onderbreking alles opnieuw ophalen, zodat gemiste wijzigingen binnenkomen.
-      if (everOpen) Object.keys(listeners).forEach(load);
-      everOpen = true;
-    };
-    es.onerror = () => {
-      setConn('Verbinding onderbroken, opnieuw verbinden…');
-      // Mogelijk verlopen sessie: controleer kort.
-      fetch('/api/config', { credentials: 'same-origin' }).then(r => { if (r.status === 401) toLogin(); }).catch(() => {});
-    };
-    es.onmessage = ev => {
-      let m; try { m = JSON.parse(ev.data); } catch { return; }
-      if (m.reload) { Object.keys(listeners).forEach(load); return; }
-      if (!m.coll || !cache[m.coll]) return;
-      if (m.data === null) delete cache[m.coll][m.id]; else cache[m.coll][m.id] = m.data;
-      emit(m.coll);
-    };
+  async function poll() {
+    if (polling || document.hidden) return;
+    polling = true;
+    try {
+      const { versie: v } = await api('GET', '/api/versie');
+      if (failures) setConn('Gedeelde opslag: verbonden');
+      failures = 0;
+      if (versie !== null && v !== versie) {
+        versie = v;
+        await Promise.all(Object.keys(listeners).map(load));
+      } else versie = v;
+    } catch (e) {
+      if (e.code !== 'unauthenticated' && ++failures === 2) setConn('Verbinding onderbroken, opnieuw proberen…');
+    }
+    polling = false;
   }
-  function setConn(t) { const el = document.getElementById('conn'); if (el) el.textContent = t; }
+  function startPolling() {
+    if (timer) return;
+    timer = setInterval(poll, POLL_MS);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) poll(); });
+  }
 
   function newId() {
     const a = new Uint8Array(20); crypto.getRandomValues(a);
-    return Array.from(a, b => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[b % 62]).join('').slice(0, 20);
+    return Array.from(a, b => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[b % 62]).join('');
   }
 
   function collection(coll) {
@@ -84,7 +87,7 @@
       },
       onSnapshot(next, error) {
         (listeners[coll] || (listeners[coll] = [])).push({ next, error });
-        connect();
+        startPolling();
         if (loadedColls.has(coll)) next(snapshot(coll)); else load(coll);
         return () => { listeners[coll] = (listeners[coll] || []).filter(l => l.next !== next); };
       },

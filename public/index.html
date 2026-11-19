@@ -712,7 +712,7 @@ function bindView(){
 render();
 (async()=>{
   downloads=window.TintStore?.downloads||null;
-  try{const c=await (await fetch('/api/config',{credentials:'same-origin'})).json();if(c.auth){const b=$('#logout');b.hidden=false;b.onclick=()=>window.TintStore.logout()}}catch(e){}
+  try{const c=await (await fetch('/api/config',{credentials:'same-origin'})).json();if(c.auth&&!c.ingelogd){location.href='/login';return}if(c.auth){const b=$('#logout');b.hidden=false;b.onclick=()=>window.TintStore.logout()}}catch(e){}
 })();
 (async()=>{
   db=window.TintStore?.db||null;
