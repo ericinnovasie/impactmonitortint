@@ -653,7 +653,8 @@ function renderMenu(){
     ${(x.dimensies||[]).length?`<div class="chips">${x.dimensies.map(k=>`<span class="pill">${esc(DIMS.find(d=>d.k===k)?.n||k)}</span>`).join('')}</div>`:''}
     ${x.leveranciers?`<p class="small"><b>Leveranciers:</b> ${esc(x.leveranciers)}</p>`:''}${x.prijs?`<p class="small"><b>Prijsindicatie:</b> ${esc(x.prijs)}</p>`:''}
     <div class="users"><b>In gebruik in de Achterhoek:</b> ${us.length?`${named.map(b=>esc(state.bedrijven[b]?.naam)+(state.bedrijven[b]?.plaats?' ('+esc(state.bedrijven[b].plaats)+')':'')).join(', ')}${anon?`${named.length?', ':''}${anon} ${anon===1?'bedrijf':'bedrijven'} (anoniem)`:''}`:'<span class="muted">nog geen bekende gebruikers</span>'}</div>
-    </article>`}).join('')}</div>`:`<div class="empty">Geen toepassingen gevonden.</div>`}`;
+    </article>`}).join('')}</div>`:(list('technologieen').length?`<div class="empty">Geen toepassingen gevonden.</div>`:`<div class="empty">De menukaart is nog leeg. <button class="btn primary" id="tintvul">Vullen met de technologiebibliotheek van TINT</button></div>`)}
+  ${list('technologieen').length?`<p class="small muted" style="margin-top:18px">Startvulling uit de <a href="https://tint-achterhoek.nl/technologie/" target="_blank" rel="noopener">technologiebibliotheek van TINT</a>. <button class="btn ghost small" id="tintvul">Ontbrekende technologieën aanvullen</button></p>`:''}`;
 }
 function renderTechEditor(){
   $('#main').innerHTML=`<div class="row between"><button class="btn ghost" id="back">← Terug naar menukaart</button><span class="save" id="savestate">${state.technologieen[edit.id]?'Opgeslagen':'Nog niet opgeslagen'}</span></div>
@@ -701,6 +702,10 @@ function bindView(){
   on('#newinv',()=>{edit={coll:'inventarisaties',id:newId('inventarisaties'),draft:{datum:today()}};render()});
   on('#newtech',()=>{edit={coll:'technologieen',id:newId('technologieen'),draft:{}};render()});
   on('#newbed',()=>{edit={coll:'bedrijven',id:newId('bedrijven'),draft:{aangemaakt:new Date().toISOString()}};render()});
+  on('#tintvul',async()=>{const b=$('#tintvul');b.disabled=true;
+    try{const r=await fetch('/api/menukaart/aanvullen',{method:'POST',credentials:'same-origin'});if(r.status===401){location.href='/login';return}
+      const j=await r.json();if(!r.ok)throw new Error();toast(j.toegevoegd?`${j.toegevoegd} technologieën toegevoegd`:'Alle technologieën staan al op de menukaart');await window.TintStore.refresh()}
+    catch(e){toast('Aanvullen mislukt. Probeer het later opnieuw.')}b.disabled=false});
   on('#copysum',()=>copyText(samenvatting()));
   on('#csv',()=>saveFile(`TINT impactmetingen ${today()}.csv`,'﻿'+csv(),'CSV-export'));
   const mq=$('#mq');if(mq){mq.oninput=()=>{menuFilter.q=mq.value;const pos=mq.selectionStart;render();const n=$('#mq');n.focus();n.setSelectionRange(pos,pos)}}

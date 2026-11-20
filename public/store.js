@@ -37,7 +37,10 @@
     try {
       const j = await api('GET', '/api/' + coll);
       cache[coll] = j.docs; loadedColls.add(coll);
+      // Kwam deze collectie met een ander versienummer binnen dan de rest, dan is er
+      // tussendoor iets gewijzigd: bij de volgende controle alles opnieuw ophalen.
       if (versie === null) versie = j.versie;
+      else if (j.versie !== versie) versie = '(opnieuw ophalen)';
       emit(coll);
     } catch (e) { if (e.code !== 'unauthenticated') fail(coll, e); }
   }
@@ -110,5 +113,5 @@
     toLogin();
   }
 
-  window.TintStore = { db: { collection }, downloads, logout };
+  window.TintStore = { db: { collection }, downloads, logout, refresh: () => Promise.all(Object.keys(listeners).map(load)) };
 })();

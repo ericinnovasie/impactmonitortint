@@ -128,7 +128,9 @@ Bij de eerste start van een nieuwe database vult de app de menukaart eenmalig me
 
 - Overgenomen: naam, uitleg ("Wat doet het?"), leveranciers met links, volwassenheid, invoertijd, voordelen en wetenschappelijke onderbouwing (in "Bronnen of links"). De volledige websitetekst staat daarnaast bewaard in het veld `tint` van elk document.
 - Zelf ingedeeld: categorie, knelpunten en verwacht effect per dimensie. De website gebruikt een andere indeling (lichamelijk, persoonlijk of sociaal functioneren). De indeling staat in `scripts/menukaart-uit-website.js` en is aan te passen. Voor technologieën uit de bibliotheek is de categorie "Toeleiding naar werk" toegevoegd.
-- De vulling draait één keer per database. Technologieën die jullie verwijderen of aanpassen komen dus niet terug.
+- De vulling draait automatisch één keer per database. Technologieën die jullie verwijderen of aanpassen komen dus niet vanzelf terug.
+- Onderaan de menukaart staat de knop "Ontbrekende technologieën aanvullen" (of "Vullen met de technologiebibliotheek van TINT" als de menukaart leeg is). Die voegt alleen toe wat ontbreekt en overschrijft niets.
+- Controle: `/healthz` toont of de menukaart gevuld is (`menukaartGevuld`) en welke versie live staat (`versie`, de eerste 7 tekens van de commit).
 - Bijwerken na wijzigingen op de website: `node scripts/menukaart-uit-website.js` schrijft een nieuwe `lib/seed-menukaart.json`. Om die in een bestaande database te krijgen, verhoog je de sleutel `menukaart-tint-2026` in `lib/app.js` (bijvoorbeeld naar `menukaart-tint-2027`). Alleen technologieën die nog niet bestaan worden dan toegevoegd.
 
 ## Huisstijl
