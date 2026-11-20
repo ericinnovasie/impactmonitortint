@@ -208,7 +208,7 @@ const KENNIS=['TINT-adviseur','HAN','Saxion','Graafschap College','Anders'];
 /* ---------- Status ---------- */
 const COLLS=['bedrijven','trajecten','inventarisaties','technologieen'];
 const state={bedrijven:{},trajecten:{},inventarisaties:{},technologieen:{}};
-let db=null, downloads=null, loaded=false, readOnly=false;
+let db=null, downloads=null, loaded=false, readOnly=false, opslagFout='';
 let view=(location.hash||'#overzicht').slice(1);
 if(!['overzicht','impact','inventarisatie','menukaart','bedrijven'].includes(view)) view='overzicht';
 let edit=null; // {coll,id,draft,step}
@@ -356,7 +356,8 @@ function render(){
   }
   let h='';
   if(!db&&loaded)h+=`<div class="banner">Geen verbinding met de gedeelde opslag. Je kunt de tool bekijken en invullen, maar invoer wordt niet bewaard. Herlaad de pagina of controleer of de server bereikbaar is.</div>`;
-  if(!loaded)h+=`<div class="banner" id="loadnote">Gegevens laden…</div>`;
+  if(opslagFout)h+=`<div class="banner"><b>De server meldt een probleem:</b> ${esc(opslagFout)}</div>`;
+  if(!loaded&&!opslagFout)h+=`<div class="banner" id="loadnote">Gegevens laden…</div>`;
   h+={overzicht:renderOverzicht,impact:renderImpactList,inventarisatie:renderInvList,menukaart:renderMenu,bedrijven:renderBedrijven}[view]();
   m.innerHTML=h;
   bindView();
@@ -705,7 +706,7 @@ function bindView(){
   on('#tintvul',async()=>{const b=$('#tintvul');b.disabled=true;
     try{const r=await fetch('/api/menukaart/aanvullen',{method:'POST',credentials:'same-origin'});if(r.status===401){location.href='/login';return}
       const j=await r.json();if(!r.ok)throw new Error();toast(j.toegevoegd?`${j.toegevoegd} technologieën toegevoegd`:'Alle technologieën staan al op de menukaart');await window.TintStore.refresh()}
-    catch(e){toast('Aanvullen mislukt. Probeer het later opnieuw.')}b.disabled=false});
+    catch(e){toast('Aanvullen mislukt. Kijk bovenaan de pagina of de server een probleem meldt.')}b.disabled=false});
   on('#copysum',()=>copyText(samenvatting()));
   on('#csv',()=>saveFile(`TINT impactmetingen ${today()}.csv`,'﻿'+csv(),'CSV-export'));
   const mq=$('#mq');if(mq){mq.oninput=()=>{menuFilter.q=mq.value;const pos=mq.selectionStart;render();const n=$('#mq');n.focus();n.setSelectionRange(pos,pos)}}
@@ -727,11 +728,11 @@ render();
   const timer=setTimeout(()=>{if(!loaded){$('#conn').textContent='Opslag nog niet bereikbaar; gegevens zijn mogelijk niet actueel'}},10000);
   COLLS.forEach(c=>{
     db.collection(c).onSnapshot(snap=>{
-      const m={};snap.docs.forEach(d=>{if(d.exists)m[d.id]=d.data()});state[c]=m;
+      const m={};snap.docs.forEach(d=>{if(d.exists)m[d.id]=d.data()});state[c]=m;opslagFout='';
       if(!snap.metadata.fromCache)pending.delete(c);
       if(pending.size===0&&!loaded){loaded=true;clearTimeout(timer)}
       if(!edit)render();
-    },err=>{pending.delete(c);if(pending.size===0){loaded=true;clearTimeout(timer)}$('#conn').textContent=err&&err.code==='revoked'?'Geen toegang meer tot de gedeelde opslag':'Verbinding met opslag verbroken; herlaad de pagina';if(!edit)render()});
+    },err=>{pending.delete(c);if(pending.size===0){loaded=true;clearTimeout(timer)}if(err&&err.serverMelding)opslagFout=err.serverMelding;$('#conn').textContent=err&&err.code==='revoked'?'Geen toegang meer tot de gedeelde opslag':opslagFout?'Probleem met de opslag (zie melding)':'Verbinding met opslag verbroken; herlaad de pagina';if(!edit)render()});
   });
 })();
 </script>

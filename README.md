@@ -29,7 +29,8 @@ docker compose up -d --build
 | `APP_PASSWORD` | leeg | Gedeeld wachtwoord voor alle gebruikers. Wijzigen logt iedereen uit. |
 | `PORT` | 3000 | Poort van de server |
 | `DATA_DIR` | `./data` | Map met de SQLite-database (alleen eigen server) |
-| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | leeg | Upstash Redis; als deze er zijn wordt Redis gebruikt in plaats van SQLite (Vercel zet ze automatisch) |
+| `KV_REST_API_URL` + `KV_REST_API_TOKEN` of `UPSTASH_REDIS_REST_URL` + `_TOKEN` | leeg | Upstash Redis via REST. Vercel zet ze automatisch, eventueel met een voorvoegsel (bijv. `STORAGE_KV_REST_API_URL`); dat wordt herkend. |
+| `REDIS_URL` (of `*_REDIS_URL`) | leeg | Gewone Redis-verbinding (`redis://` of `rediss://`), zoals "Redis" in de Vercel Marketplace aanmaakt. |
 | `COOKIE_SECURE` | automatisch | Op `true` zetten als de app via https draait maar de proxy geen `X-Forwarded-Proto` meestuurt |
 | `SESSION_DAYS` | 30 | Hoe lang iemand ingelogd blijft |
 | `SESSION_SECRET` | automatisch | Optioneel; anders aangemaakt en bewaard in de database |
@@ -37,11 +38,11 @@ docker compose up -d --build
 ### Online zetten op Vercel
 
 1. Vercel → **Add New → Project** → importeer de GitHub-repo. Laat alle instellingen staan (`vercel.json` regelt de rest).
-2. In het project: **Storage → Create Database → Upstash (Redis)** → koppel aan dit project. Vercel zet dan zelf `KV_REST_API_URL` en `KV_REST_API_TOKEN`.
+2. In het project: **Storage → Create Database → Upstash for Redis** (of **Redis**) → koppel aan dit project. Vercel zet dan zelf de verbindingsgegevens; beide soorten worden herkend.
 3. **Settings → Environment Variables**: voeg `APP_PASSWORD` toe.
 4. **Deployments → Redeploy**. Daarna gaat elke push naar `main` automatisch live.
 
-Controle: `https://<jouw-domein>/healthz` moet `"opslag":"redis"` tonen.
+Controle: `https://<jouw-domein>/healthz` moet `"opslag":"upstash"` of `"opslag":"redis"` tonen. Is er iets mis met de database, dan staat de melding op de inlogpagina en bovenaan de app.
 
 Op Vercel serveert Vercel de bestanden in `public/` zelf; `api/index.js` handelt inloggen en de API af. De pagina's bevatten geen gegevens; alle gegevens gaan via de API en vereisen inlog.
 
@@ -61,7 +62,8 @@ Elke host die Node of Docker draait en een blijvende schijf heeft werkt (VPS, Fl
 server.js          Eigen server (lokaal, Docker)
 api/index.js       Vercel-functie
 lib/app.js         Inlog, REST-API en statische bestanden (gedeeld)
-lib/store*.js      Opslag: SQLite (eigen server) of Upstash Redis (Vercel)
+lib/store*.js      Opslag: SQLite (eigen server) of Redis (Vercel)
+lib/redis-tcp.js   Kleine Redis-client voor redis://-verbindingen
 vercel.json        Vercel-configuratie
 public/index.html  De volledige interface (meetinstrument, editors, rapporten)
 public/store.js    Opslaglaag in de browser met dezelfde interface als de claude.ai-db

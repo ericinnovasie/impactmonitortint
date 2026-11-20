@@ -21,7 +21,10 @@
     });
     if (r.status === 401) { toLogin(); throw Object.assign(new Error('niet ingelogd'), { code: 'unauthenticated' }); }
     if (r.status === 413) throw Object.assign(new Error('te groot'), { code: 'quota_exceeded' });
-    if (!r.ok) throw Object.assign(new Error('fout ' + r.status), { code: 'http_' + r.status });
+    if (!r.ok) {
+      const j = await r.json().catch(() => ({}));
+      throw Object.assign(new Error('fout ' + r.status), { code: 'http_' + r.status, serverMelding: j.error || '' });
+    }
     return r.json();
   }
 
@@ -57,7 +60,7 @@
         await Promise.all(Object.keys(listeners).map(load));
       } else versie = v;
     } catch (e) {
-      if (e.code !== 'unauthenticated' && ++failures === 2) setConn('Verbinding onderbroken, opnieuw proberen…');
+      if (e.code !== 'unauthenticated' && ++failures >= 2) setConn(e.serverMelding ? 'Probleem met de opslag (zie melding)' : 'Verbinding onderbroken, opnieuw proberen…');
     }
     polling = false;
   }
